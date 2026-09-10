@@ -8,3 +8,14 @@
   --uikit-color-secondary-border: #d1d5db;
   --uikit-color-secondary-text: #111827;
 }
+
+[data-theme="dark"] {
+  --uikit-color-primary-bg: #3b82f6;
+  --uikit-color-primary-bg-hover: #60a5fa;
+  --uikit-color-primary-text: #ffffff;
+
+  --uikit-color-secondary-bg: transparent;
+  --uikit-color-secondary-bg-hover: #1f2937;
+  --uikit-color-secondary-border: #374151;
+  --uikit-color-secondary-text: #f3f4f6;
+}

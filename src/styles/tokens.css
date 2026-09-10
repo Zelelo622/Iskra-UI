@@ -1,0 +1,10 @@
+:root {
+  --uikit-color-primary-bg: #2563eb;
+  --uikit-color-primary-bg-hover: #1d4ed8;
+  --uikit-color-primary-text: #ffffff;
+
+  --uikit-color-secondary-bg: transparent;
+  --uikit-color-secondary-bg-hover: #f3f4f6;
+  --uikit-color-secondary-border: #d1d5db;
+  --uikit-color-secondary-text: #111827;
+}

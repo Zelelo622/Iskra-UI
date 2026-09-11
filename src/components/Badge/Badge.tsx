@@ -27,7 +27,7 @@ export const Badge = ({
   label,
   className,
   ...props
-}: IBadgeProps) => {
+}: IBadgeProps): JSX.Element => {
   const isDot = count === undefined;
   const colorClass = styles[color];
   const classes = [styles.badge, isDot ? styles.dot : styles.count, colorClass, className]

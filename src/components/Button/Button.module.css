@@ -1,18 +1,18 @@
 @import "../../styles/tokens.css";
 
 .button {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5em;
   border: 1px solid transparent;
   border-radius: 6px;
-  padding: 0.5em 1em;
-  font-size: var(--uikit-font-size-sm);
-  font-weight: var(--uikit-font-weight-medium);
   line-height: 1.2;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .button:disabled {
@@ -37,4 +37,25 @@
 
 .secondary:not(:disabled):hover {
   background-color: var(--uikit-color-secondary-bg-hover);
+}
+
+.sm {
+  height: 32px;
+  padding: 0 10px;
+  font-size: var(--uikit-font-size-xs);
+  font-weight: var(--uikit-font-weight-medium);
+}
+
+.md {
+  height: 40px;
+  padding: 0 16px;
+  font-size: var(--uikit-font-size-sm);
+  font-weight: var(--uikit-font-weight-medium);
+}
+
+.lg {
+  height: 48px;
+  padding: 0 20px;
+  font-size: var(--uikit-font-size-md);
+  font-weight: var(--uikit-font-weight-medium);
 }

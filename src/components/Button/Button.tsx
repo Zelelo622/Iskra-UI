@@ -4,12 +4,16 @@ import styles from "./Button.module.css";
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
 }
 
 export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
-  ({ variant = "primary", className, ...props }, ref) => {
-    const variantClass = variant === "primary" ? styles.primary : styles.secondary;
-    const classes = [styles.button, variantClass, className].filter(Boolean).join(" ");
+  ({ variant = "primary", size = "md", className, ...props }, ref) => {
+    const variantClass = styles[variant];
+    const sizeClass = styles[size];
+    const classes = [styles.button, variantClass, sizeClass, className]
+      .filter(Boolean)
+      .join(" ");
 
     return <button ref={ref} className={classes} {...props} />;
   }

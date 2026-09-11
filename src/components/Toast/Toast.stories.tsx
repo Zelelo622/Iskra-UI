@@ -2,6 +2,7 @@ import { Story } from "@ladle/react";
 import { Toast, IToastProps } from "./Toast";
 import { useToast } from "./ToastProvider/hook/useToast";
 import { ToastProvider } from "./ToastProvider/ToastProvider";
+import { Button } from "../Button/Button";
 
 export default {
   title: "Toast",
@@ -29,22 +30,34 @@ const ImperativeDemo = () => {
 
   return (
     <div style={{ display: "flex", gap: "0.5rem" }}>
-      <button onClick={() => toast.info({ title: "Информация", description: "Так себе новость." })}>
+      <Button
+        size="sm"
+        variant="secondary"
+        onClick={() => toast.info({ title: "Информация", description: "Так себе новость." })}
+      >
         Info
-      </button>
-      <button onClick={() => toast.success({ title: "Успешно", description: "Данные сохранены." })}>
+      </Button>
+      <Button
+        size="sm"
+        variant="secondary"
+        onClick={() => toast.success({ title: "Успешно", description: "Данные сохранены." })}
+      >
         Success
-      </button>
-      <button
+      </Button>
+      <Button
+        size="sm"
+        variant="secondary"
         onClick={() => toast.warning({ title: "Предупреждение", description: "Проверьте поля." })}
       >
         Warning
-      </button>
-      <button
+      </Button>
+      <Button
+        size="sm"
+        variant="secondary"
         onClick={() => toast.error({ title: "Ошибка", description: "Не удалось сохранить." })}
       >
         Error
-      </button>
+      </Button>
     </div>
   );
 };

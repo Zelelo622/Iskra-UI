@@ -1,18 +1,33 @@
 :root {
+  /* Colors tokens */
   --uikit-color-primary-bg: #2563eb;
   --uikit-color-primary-bg-hover: #1d4ed8;
-  --uikit-color-primary-text: #ffffff;
+  --uikit-color-red-bg: #b3261e;
+  --uikit-color-green-bg: #15803d;
+  --uikit-color-on-accent: #ffffff;
 
   --uikit-color-secondary-bg: transparent;
   --uikit-color-secondary-bg-hover: #f3f4f6;
   --uikit-color-secondary-border: #d1d5db;
   --uikit-color-secondary-text: #111827;
+
+  /* Typography tokens */
+  --uikit-font-size-xs: 12px;
+  --uikit-font-size-sm: 14px;
+  --uikit-font-size-md: 16px;
+  --uikit-font-size-lg: 18px;
+  --uikit-font-size-xl: 20px;
+
+  --uikit-font-weight-regular: 400;
+  --uikit-font-weight-medium: 500;
+  --uikit-font-weight-semibold: 600;
+  --uikit-font-weight-bold: 700;
 }
 
 [data-theme="dark"] {
+  /* Colors tokens */
   --uikit-color-primary-bg: #3b82f6;
   --uikit-color-primary-bg-hover: #60a5fa;
-  --uikit-color-primary-text: #ffffff;
 
   --uikit-color-secondary-bg: transparent;
   --uikit-color-secondary-bg-hover: #1f2937;

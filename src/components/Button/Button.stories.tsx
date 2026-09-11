@@ -13,7 +13,7 @@ export const Secondary: Story<IButtonProps> = (props) => <Button {...props}>Seco
 Secondary.args = { variant: "secondary", disabled: false };
 
 export const Disabled: Story<IButtonProps> = (props) => (
-  <div style={{ display: "flex", gap: "0.5rem" }}>
+  <div style={{ display: "flex", gap: "1rem" }}>
     <Button {...props} variant="primary">
       Primary
     </Button>

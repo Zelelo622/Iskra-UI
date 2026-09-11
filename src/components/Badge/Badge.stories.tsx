@@ -34,3 +34,11 @@ export const BadgeGreen: Story<IBadgeProps> = (props) => (
     </div>
 );
 BadgeGreen.args = { color: "green" };
+
+export const AccessibleDot: Story<IBadgeProps> = (props) => (
+    <div style={{ display: "flex", gap: "1rem" }}>
+        <Badge {...props} color="green" label="Online" />
+        <Badge {...props} color="red" label="Offline" />
+    </div>
+);
+AccessibleDot.args = {};

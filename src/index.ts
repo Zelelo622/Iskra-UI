@@ -4,3 +4,8 @@ export { Badge } from "./components/Badge/Badge";
 export type { IBadgeProps } from "./components/Badge/Badge";
 export { Alert } from "./components/Alert/Alert";
 export type { IAlertProps } from "./components/Alert/Alert";
+export { Toast } from "./components/Toast/Toast";
+export type { IToastProps } from "./components/Toast/Toast";
+export { ToastProvider } from "./components/Toast/ToastProvider/ToastProvider";
+export { useToast } from "./components/Toast/ToastProvider/hook/useToast";
+export type { IToastOptions } from "./components/Toast/ToastProvider/ToastProvider";

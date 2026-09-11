@@ -30,6 +30,9 @@
   --uikit-font-weight-medium: 500;
   --uikit-font-weight-semibold: 600;
   --uikit-font-weight-bold: 700;
+
+  /* Z-index */
+  --uikit-z-index-toast: 1000;
 }
 
 [data-theme="dark"] {

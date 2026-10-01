@@ -40,6 +40,11 @@
 
   /* Z-index */
   --uikit-z-index-toast: 1000;
+
+  /* Spinner size tokens */
+  --uikit-spinner-size-sm: 16px;
+  --uikit-spinner-size-md: 24px;
+  --uikit-spinner-size-lg: 32px;
 }
 
 [data-theme="dark"] {

@@ -9,3 +9,7 @@ export type { IToastProps } from "./components/Toast/Toast";
 export { ToastProvider } from "./components/Toast/ToastProvider/ToastProvider";
 export { useToast } from "./components/Toast/ToastProvider/hook/useToast";
 export type { IToastOptions } from "./components/Toast/ToastProvider/ToastProvider";
+export { Skeleton } from "./components/Skeleton/Skeleton";
+export type { ISkeletonProps } from "./components/Skeleton/Skeleton";
+export { Spinner } from "./components/Spinner/Spinner";
+export type { ISpinnerProps } from "./components/Spinner/Spinner";

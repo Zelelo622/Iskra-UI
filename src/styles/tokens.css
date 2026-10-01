@@ -2,6 +2,7 @@
   /* Colors tokens */
   --uikit-color-primary-bg: #2563eb;
   --uikit-color-primary-bg-hover: #1d4ed8;
+  --uikit-color-primary-bg-focus: #1d52e4;
   --uikit-color-red-bg: #b3261e;
   --uikit-color-green-bg: #15803d;
   --uikit-color-on-accent: #ffffff;
@@ -51,6 +52,7 @@
   /* Colors tokens */
   --uikit-color-primary-bg: #3b82f6;
   --uikit-color-primary-bg-hover: #60a5fa;
+  --uikit-color-primary-bg-focus: #4798fc;
   --uikit-color-alert-info-text: #b8e7fb;
   --uikit-color-alert-info-bg: #014361;
   --uikit-color-alert-success-text: #cce8cd;

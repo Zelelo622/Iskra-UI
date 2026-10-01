@@ -1,8 +1,6 @@
 import { CSSProperties, HTMLAttributes, ReactNode } from "react";
-import { cx } from "src/utils/utils";
+import { cx, toCss, type TCssSize as TSize } from "src/utils/utils";
 import styles from "./Skeleton.module.css";
-
-type TSize = number | string;
 
 export interface ISkeletonProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: "text" | "rect" | "circle";
@@ -14,7 +12,6 @@ export interface ISkeletonProps extends HTMLAttributes<HTMLSpanElement> {
   loading?: boolean;
 }
 
-const toCss = (value?: TSize) => (typeof value === "number" ? `${value}px` : value);
 
 export const Skeleton = ({
   variant = "text",

@@ -2,7 +2,18 @@ import { useContext } from "react";
 import { IToastOptions, ToastContext } from "../ToastProvider";
 import { TToastVariant } from "../../Toast";
 
-export const useToast = () => {
+type TShowByVariant = (options?: Omit<IToastOptions, "variant">) => string;
+
+export interface IUseToastResult {
+  show: (options: IToastOptions) => string;
+  close: (id: string) => void;
+  info: TShowByVariant;
+  success: TShowByVariant;
+  warning: TShowByVariant;
+  error: TShowByVariant;
+}
+
+export const useToast = (): IUseToastResult => {
   const ctx = useContext(ToastContext);
   if (!ctx) {
     throw new Error("useToast использован вне ToastProvider");

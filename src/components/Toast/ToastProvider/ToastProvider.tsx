@@ -37,7 +37,10 @@ const nextId = () => `toast-${Date.now()}-${idCounter++}`;
 
 export const ToastContext = createContext<IToastContextValue | null>(null);
 
-export const ToastProvider = ({ children, position = "top-right" }: IToastProviderProps) => {
+export const ToastProvider = ({
+  children,
+  position = "top-right",
+}: IToastProviderProps): ReactNode => {
   const [toasts, setToasts] = useState<IToastItem[]>([]);
 
   const close = useCallback((id: string) => {

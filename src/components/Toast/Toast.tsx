@@ -1,4 +1,11 @@
-import { useEffect, useRef, useState, type HTMLAttributes, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type HTMLAttributes,
+  type ReactNode,
+} from "react";
 import styles from "./Toast.module.css";
 
 export type TToastVariant = "info" | "success" | "warning" | "error";
@@ -23,34 +30,42 @@ export const Toast = ({
   onMouseEnter,
   onMouseLeave,
   ...props
-}: IToastProps) => {
+}: IToastProps): ReactNode => {
   const [visible, setVisible] = useState(true);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
   const remainingRef = useRef(duration);
   const startedAtRef = useRef(0);
+  const onCloseRef = useRef(onClose);
 
-  const handleClose = () => {
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
+  const handleClose = useCallback(() => {
     setVisible(false);
-    onClose?.();
-  };
+    onCloseRef.current?.();
+  }, []);
 
-  const clearTimer = () => {
+  const clearTimer = useCallback(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = undefined;
     }
-  };
+  }, []);
 
-  const startTimer = (ms: number) => {
-    if (ms <= 0) return;
-    startedAtRef.current = Date.now();
-    timerRef.current = setTimeout(handleClose, ms);
-  };
+  const startTimer = useCallback(
+    (ms: number) => {
+      if (ms <= 0) return;
+      startedAtRef.current = Date.now();
+      timerRef.current = setTimeout(handleClose, ms);
+    },
+    [handleClose],
+  );
 
   useEffect(() => {
     startTimer(remainingRef.current);
     return clearTimer;
-  }, []);
+  }, [startTimer, clearTimer]);
 
   const handleMouseEnter: React.MouseEventHandler<HTMLDivElement> = (e) => {
     clearTimer();
@@ -73,13 +88,11 @@ export const Toast = ({
   return (
     <div
       className={classes}
-      role="status"
-      aria-live="polite"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
-      <div className={styles.content}>
+      <div className={styles.content} role="status" aria-live="polite">
         {title && <div className={styles.title}>{title}</div>}
         {children && <div className={styles.description}>{children}</div>}
       </div>

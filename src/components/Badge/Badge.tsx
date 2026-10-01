@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import styles from "./Badge.module.css";
 
 export interface IBadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, "children"> {
@@ -20,7 +20,7 @@ export const Badge = ({
   count,
   className,
   ...props
-}: IBadgeProps): JSX.Element => {
+}: IBadgeProps): ReactNode => {
   const isDot = count === undefined;
   const colorClass = styles[color];
   const classes = [styles.badge, isDot ? styles.dot : styles.count, colorClass, className]

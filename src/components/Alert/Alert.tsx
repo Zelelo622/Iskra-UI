@@ -17,7 +17,7 @@ export const Alert = ({
   children,
   className,
   ...props
-}: IAlertProps) => {
+}: IAlertProps): ReactNode => {
   const [visible, setVisible] = useState(true);
 
   if (!visible) {

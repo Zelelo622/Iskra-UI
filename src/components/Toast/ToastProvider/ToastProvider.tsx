@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useCallback, useMemo, useState } from "react";
-import { IToastProps, Toast } from "../Toast";
+import { IToastProps, Toast } from "src/components/Toast/Toast";
 import { createPortal } from "react-dom";
 import styles from "./ToastContainer.module.css";
 

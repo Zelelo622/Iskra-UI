@@ -2,7 +2,7 @@ import { Story } from "@ladle/react";
 import { Toast, IToastProps } from "./Toast";
 import { useToast } from "./ToastProvider/hook/useToast";
 import { ToastProvider } from "./ToastProvider/ToastProvider";
-import { Button } from "../Button/Button";
+import { Button } from "src/components/Button/Button";
 
 export default {
   title: "Toast",

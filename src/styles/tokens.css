@@ -19,6 +19,13 @@
   --uikit-color-secondary-border: #d1d5db;
   --uikit-color-secondary-text: #111827;
 
+  --uikit-color-skeleton-bg: #e5e7eb;
+  --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.5);
+
+  /* Radius tokens */
+  --uikit-radius-sm: 4px;
+  --uikit-radius-md: 8px;
+
   /* Typography tokens */
   --uikit-font-size-xs: 12px;
   --uikit-font-size-sm: 14px;
@@ -52,4 +59,7 @@
   --uikit-color-secondary-bg-hover: #1f2937;
   --uikit-color-secondary-border: #374151;
   --uikit-color-secondary-text: #f3f4f6;
+
+  --uikit-color-skeleton-bg: #374151;
+  --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.08);
 }

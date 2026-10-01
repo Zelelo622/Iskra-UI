@@ -1,0 +1,70 @@
+@import "../../styles/tokens.css";
+
+.skeleton {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: var(--uikit-color-skeleton-bg);
+  border-radius: var(--uikit-radius-sm);
+}
+
+.text {
+  height: 1em;
+}
+.rect {
+  border-radius: var(--uikit-radius-md);
+}
+.circle {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.withChildren {
+  width: fit-content;
+  height: auto;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.wave::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--uikit-color-skeleton-highlight),
+    transparent
+  );
+  animation: wave 1.6s linear infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes wave {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse,
+  .wave::after {
+    animation: none;
+  }
+}

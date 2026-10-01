@@ -6,6 +6,7 @@ import {
   type HTMLAttributes,
   type ReactNode,
 } from "react";
+import { cx } from "src/utils/utils";
 import styles from "./Toast.module.css";
 
 export type TToastVariant = "info" | "success" | "warning" | "error";
@@ -82,8 +83,7 @@ export const Toast = ({
     return null;
   }
 
-  const variantClass = styles[variant];
-  const classes = [styles.toast, variantClass, className].filter(Boolean).join(" ");
+  const classes = cx(styles.toast, styles[variant], className);
 
   return (
     <div

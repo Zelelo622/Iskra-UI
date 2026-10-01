@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode, useState } from "react";
+import { cx } from "src/utils/utils";
 import styles from "./Alert.module.css";
 
 export interface IAlertProps extends HTMLAttributes<HTMLDivElement> {
@@ -29,8 +30,7 @@ export const Alert = ({
     onClose?.();
   };
 
-  const variantClass = styles[variant];
-  const classes = [styles.alert, variantClass, className].filter(Boolean).join(" ");
+  const classes = cx(styles.alert, styles[variant], className);
 
   return (
     <div className={classes} role="alert" {...props}>

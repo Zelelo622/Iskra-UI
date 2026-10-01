@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useCallback, useMemo, useState } from "react";
 import { IToastProps, Toast } from "src/components/Toast/Toast";
 import { createPortal } from "react-dom";
+import { cx } from "src/utils/utils";
 import styles from "./ToastContainer.module.css";
 
 export interface IToastOptions extends Pick<
@@ -60,7 +61,7 @@ export const ToastProvider = ({
       {children}
       {typeof document !== "undefined" &&
         createPortal(
-          <div className={`${styles.container} ${styles[position]}`}>
+          <div className={cx(styles.container, styles[position])}>
             {toasts.map(({ id, description, ...rest }) => (
               <Toast key={id} {...rest} onClose={() => close(id)}>
                 {description}

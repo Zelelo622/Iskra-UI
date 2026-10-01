@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
+import { cx } from "src/utils/utils";
 import styles from "./Badge.module.css";
 
 export interface IBadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, "children"> {
@@ -22,10 +23,7 @@ export const Badge = ({
   ...props
 }: IBadgeProps): ReactNode => {
   const isDot = count === undefined;
-  const colorClass = styles[color];
-  const classes = [styles.badge, isDot ? styles.dot : styles.count, colorClass, className]
-    .filter(Boolean)
-    .join(" ");
+  const classes = cx(styles.badge, isDot ? styles.dot : styles.count, styles[color], className);
 
   return (
     <span className={classes} {...props}>

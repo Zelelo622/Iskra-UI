@@ -1,0 +1,48 @@
+@import "../../styles/tokens.css";
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--uikit-color-secondary-border);
+}
+
+.tab {
+  padding: 8px 12px;
+  margin-bottom: -1px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--uikit-color-muted-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tab:hover:not(:disabled) {
+  color: var(--uikit-color-secondary-text);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--uikit-color-secondary-text);
+  border-bottom-color: var(--uikit-color-primary-bg);
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab:focus-visible,
+.panel:focus-visible {
+  outline: 2px solid var(--uikit-color-primary-bg-focus);
+  outline-offset: 2px;
+}
+
+.panel {
+  color: var(--uikit-color-secondary-text);
+}

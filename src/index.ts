@@ -13,3 +13,5 @@ export { Skeleton } from "./components/Skeleton/Skeleton";
 export type { ISkeletonProps } from "./components/Skeleton/Skeleton";
 export { Spinner } from "./components/Spinner/Spinner";
 export type { ISpinnerProps } from "./components/Spinner/Spinner";
+export {Tabs} from "./components/Tabs/Tabs";
+export type {ITabsProps, ITabItem} from "./components/Tabs/Tabs";

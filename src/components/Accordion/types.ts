@@ -13,5 +13,5 @@ export interface IAccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   disabled?: boolean;
 }
 
-export type TAccordionTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>;
-export type TAccordionContentProps = HTMLAttributes<HTMLDivElement>;
+export type IAccordionTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>;
+export type IAccordionContentProps = HTMLAttributes<HTMLDivElement>;

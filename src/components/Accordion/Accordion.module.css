@@ -1,4 +1,87 @@
 @import "../../styles/tokens.css";
 
 .accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--uikit-radius-md);
+  border: 1px solid var(--uikit-color-secondary-border);
+  overflow: hidden;
+}
+
+.item {
+  border-bottom: 1px solid var(--uikit-color-secondary-border);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item.disabled {
+  opacity: 0.5;
+}
+
+.header {
+  margin: 0;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: var(--uikit-font-size-md);
+  font-weight: var(--uikit-font-weight-medium);
+  color: var(--uikit-color-secondary-text);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.trigger:hover:not(:disabled) {
+  background-color: var(--uikit-color-secondary-bg-hover);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--uikit-color-primary-bg);
+  outline-offset: -2px;
+}
+
+.trigger:disabled {
+  cursor: not-allowed;
+}
+
+.icon {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.contentWrapperOpen {
+  grid-template-rows: 1fr;
+}
+
+.contentInner {
+  overflow: hidden;
+}
+
+.contentInner > * {
+  padding: 0 16px 16px 16px;
+  margin: 0;
+  font-size: var(--uikit-font-size-sm);
+  color: var(--uikit-color-muted-text);
+  line-height: 1.5;
 }

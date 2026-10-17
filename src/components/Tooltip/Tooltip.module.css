@@ -1,0 +1,100 @@
+@import "../../styles/tokens.css";
+
+.tooltip {
+  z-index: var(--uikit-z-index-tooltip);
+  max-width: 250px;
+  padding: 6px 12px;
+  font-size: var(--uikit-font-size-xs);
+  font-weight: var(--uikit-font-weight-medium);
+  line-height: 1.4;
+  color: var(--uikit-color-tooltip-text);
+  background-color: var(--uikit-color-tooltip-bg);
+  border-radius: var(--uikit-radius-sm);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: inherit;
+  transform: rotate(45deg);
+}
+
+/* ---------- TOP ---------- */
+.tooltip[data-placement^="top"] .arrow {
+  bottom: -4px;
+  left: calc(50% - 4px);
+}
+
+.tooltip[data-placement="top-start"] .arrow {
+  left: 12px;
+  right: auto;
+}
+
+.tooltip[data-placement="top-end"] .arrow {
+  left: auto;
+  right: 12px;
+}
+
+/* ---------- BOTTOM ---------- */
+.tooltip[data-placement^="bottom"] .arrow {
+  top: -4px;
+  left: calc(50% - 4px);
+}
+
+.tooltip[data-placement="bottom-start"] .arrow {
+  left: 12px;
+  right: auto;
+}
+
+.tooltip[data-placement="bottom-end"] .arrow {
+  left: auto;
+  right: 12px;
+}
+
+/* ---------- LEFT ---------- */
+.tooltip[data-placement^="left"] .arrow {
+  right: -4px;
+  top: calc(50% - 4px);
+}
+
+.tooltip[data-placement="left-start"] .arrow {
+  top: 8px;
+  bottom: auto;
+}
+
+.tooltip[data-placement="left-end"] .arrow {
+  top: auto;
+  bottom: 8px;
+}
+
+/* ---------- RIGHT ---------- */
+.tooltip[data-placement^="right"] .arrow {
+  left: -4px;
+  top: calc(50% - 4px);
+}
+
+.tooltip[data-placement="right-start"] .arrow {
+  top: 8px;
+  bottom: auto;
+}
+
+.tooltip[data-placement="right-end"] .arrow {
+  top: auto;
+  bottom: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

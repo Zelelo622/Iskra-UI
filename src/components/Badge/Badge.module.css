@@ -23,16 +23,16 @@
 }
 
 .blue {
-  background-color: var(--uikit-color-primary-bg);
-  color: var(--uikit-color-on-accent);
+  background-color: var(--uikit-color-accent);
+  color: var(--uikit-color-text-on-accent);
 }
 
 .red {
-  background-color: var(--uikit-color-red-bg);
-  color: var(--uikit-color-on-accent);
+  background-color: var(--uikit-color-danger);
+  color: var(--uikit-color-text-on-accent);
 }
 
 .green {
-  background-color: var(--uikit-color-green-bg);
-  color: var(--uikit-color-on-accent);
+  background-color: var(--uikit-color-success);
+  color: var(--uikit-color-text-on-accent);
 }

@@ -1,78 +1,162 @@
 :root {
-  /* Colors tokens */
-  --uikit-color-primary-bg: #2563eb;
-  --uikit-color-primary-bg-hover: #1d4ed8;
-  --uikit-color-primary-bg-focus: #1d52e4;
-  --uikit-color-red-bg: #b3261e;
-  --uikit-color-green-bg: #15803d;
-  --uikit-color-on-accent: #ffffff;
-  --uikit-color-muted-text: #6b7280;
-  --uikit-color-alert-info-text: #014361;
-  --uikit-color-alert-info-bg: #b8e7fb;
-  --uikit-color-alert-success-text: #1e4620;
-  --uikit-color-alert-success-bg: #cce8cd;
-  --uikit-color-alert-warning-text: #663c00;
-  --uikit-color-alert-warning-bg: #ffe2b7;
-  --uikit-color-alert-error-text: #5f2120;
-  --uikit-color-alert-error-bg: #f4c7c7;
-  --uikit-color-tooltip-bg: #1f2937;
-  --uikit-color-tooltip-text: #ffffff;
-  
-  --uikit-color-secondary-bg: transparent;
-  --uikit-color-secondary-bg-hover: #f3f4f6;
-  --uikit-color-secondary-border: #d1d5db;
-  --uikit-color-secondary-text: #111827;
-  
-  --uikit-color-skeleton-bg: #e5e7eb;
+  /* ============================================
+     LAYER 1: PRIMITIVES
+     ============================================ */
+  --uikit-white: #ffffff;
+  --uikit-black: #000000;
+
+  --uikit-gray-50: #f9fafb;
+  --uikit-gray-100: #f3f4f6;
+  --uikit-gray-200: #e5e7eb;
+  --uikit-gray-300: #d1d5db;
+  --uikit-gray-400: #9ca3af;
+  --uikit-gray-500: #6b7280;
+  --uikit-gray-600: #4b5563;
+  --uikit-gray-700: #374151;
+  --uikit-gray-800: #1f2937;
+  --uikit-gray-900: #111827;
+
+  --uikit-blue-400: #60a5fa;
+  --uikit-blue-500: #3b82f6;
+  --uikit-blue-600: #2563eb;
+  --uikit-blue-700: #1d4ed8;
+  --uikit-blue-800: #1d52e4;
+
+  --uikit-red-400: #f87171;
+  --uikit-red-500: #ef4444;
+  --uikit-red-700: #b3261e;
+
+  --uikit-green-500: #22c55e;
+  --uikit-green-700: #15803d;
+
+  /* ============================================
+     LAYER 2: SEMANTIC
+     ============================================ */
+
+  /* --- Surfaces (фоны) --- */
+  --uikit-color-surface: var(--uikit-white);
+  --uikit-color-surface-subtle: var(--uikit-gray-100);
+  --uikit-color-surface-hover: var(--uikit-gray-100);
+  --uikit-color-surface-active: var(--uikit-gray-200);
+  --uikit-color-surface-inverse: var(--uikit-gray-800);
+
+  /* --- Text --- */
+  --uikit-color-text: var(--uikit-gray-900);
+  --uikit-color-text-muted: var(--uikit-gray-500);
+  --uikit-color-text-subtle: var(--uikit-gray-400);
+  --uikit-color-text-placeholder: var(--uikit-gray-400);
+  --uikit-color-text-inverse: var(--uikit-white);
+  --uikit-color-text-on-accent: var(--uikit-white);
+
+  /* --- Borders --- */
+  --uikit-color-border: var(--uikit-gray-300);
+  --uikit-color-border-subtle: var(--uikit-gray-200);
+  --uikit-color-border-hover: var(--uikit-gray-400);
+  --uikit-color-border-focus: var(--uikit-blue-700);
+
+  /* --- Accent (primary action) --- */
+  --uikit-color-accent: var(--uikit-blue-600);
+  --uikit-color-accent-hover: var(--uikit-blue-700);
+  --uikit-color-accent-focus: var(--uikit-blue-800);
+
+  /* --- Status (solid, для бейджей и "залитых" кнопок) --- */
+  --uikit-color-danger: var(--uikit-red-700);
+  --uikit-color-success: var(--uikit-green-700);
+
+  /* --- Status (soft, для Alert/Toast) --- */
+  --uikit-color-info-bg: #b8e7fb;
+  --uikit-color-info-text: #014361;
+  --uikit-color-success-bg: #cce8cd;
+  --uikit-color-success-text: #1e4620;
+  --uikit-color-warning-bg: #ffe2b7;
+  --uikit-color-warning-text: #663c00;
+  --uikit-color-error-bg: #f4c7c7;
+  --uikit-color-error-text: #5f2120;
+
+  /* --- Focus rings --- */
+  --uikit-color-ring-accent: rgba(37, 99, 235, 0.25);
+  --uikit-color-ring-error: rgba(179, 38, 30, 0.25);
+
+  /* ============================================
+     LAYER 3: COMPONENT-SPECIFIC
+     ============================================ */
   --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.5);
-  
-  /* Radius tokens */
+
+  /* --- Radius --- */
   --uikit-radius-sm: 4px;
   --uikit-radius-md: 8px;
-  
-  /* Typography tokens */
+
+  /* --- Typography --- */
   --uikit-font-size-xs: 12px;
   --uikit-font-size-sm: 14px;
   --uikit-font-size-md: 16px;
   --uikit-font-size-lg: 18px;
   --uikit-font-size-xl: 20px;
-  
+
   --uikit-font-weight-regular: 400;
   --uikit-font-weight-medium: 500;
   --uikit-font-weight-semibold: 600;
   --uikit-font-weight-bold: 700;
-  
-  /* Z-index */
+
+  /* --- Z-index --- */
   --uikit-z-index-toast: 1000;
   --uikit-z-index-tooltip: 1100;
 
-  /* Spinner size tokens */
+  /* --- Component sizes --- */
   --uikit-spinner-size-sm: 16px;
   --uikit-spinner-size-md: 24px;
   --uikit-spinner-size-lg: 32px;
+
+  --uikit-input-height-sm: 32px;
+  --uikit-input-height-md: 40px;
+  --uikit-input-height-lg: 48px;
 }
 
 [data-theme="dark"] {
-  /* Colors tokens */
-  --uikit-color-primary-bg: #3b82f6;
-  --uikit-color-primary-bg-hover: #60a5fa;
-  --uikit-color-primary-bg-focus: #4798fc;
-  --uikit-color-alert-info-text: #b8e7fb;
-  --uikit-color-alert-info-bg: #014361;
-  --uikit-color-alert-success-text: #cce8cd;
-  --uikit-color-alert-success-bg: #1e4620;
-  --uikit-color-alert-warning-text: #ffe2b7;
-  --uikit-color-alert-warning-bg: #663c00;
-  --uikit-color-alert-error-text: #f4c7c7;
-  --uikit-color-alert-error-bg: #5f2120;
-  --uikit-color-tooltip-bg: #374151;
-  --uikit-color-tooltip-text: #f3f4f6;
+  /* --- Surfaces --- */
+  --uikit-color-surface: var(--uikit-gray-800);
+  --uikit-color-surface-subtle: var(--uikit-gray-700);
+  --uikit-color-surface-hover: var(--uikit-gray-700);
+  --uikit-color-surface-active: var(--uikit-gray-600);
+  --uikit-color-surface-inverse: var(--uikit-gray-100);
 
-  --uikit-color-secondary-bg: transparent;
-  --uikit-color-secondary-bg-hover: #1f2937;
-  --uikit-color-secondary-border: #374151;
-  --uikit-color-secondary-text: #f3f4f6;
+  /* --- Text --- */
+  --uikit-color-text: var(--uikit-gray-100);
+  --uikit-color-text-muted: var(--uikit-gray-400);
+  --uikit-color-text-subtle: var(--uikit-gray-500);
+  --uikit-color-text-placeholder: var(--uikit-gray-500);
+  --uikit-color-text-inverse: var(--uikit-gray-900);
+  --uikit-color-text-on-accent: var(--uikit-white);
 
-  --uikit-color-skeleton-bg: #374151;
+  /* --- Borders --- */
+  --uikit-color-border: var(--uikit-gray-600);
+  --uikit-color-border-subtle: var(--uikit-gray-700);
+  --uikit-color-border-hover: var(--uikit-gray-500);
+  --uikit-color-border-focus: var(--uikit-blue-400);
+
+  /* --- Accent --- */
+  --uikit-color-accent: var(--uikit-blue-500);
+  --uikit-color-accent-hover: var(--uikit-blue-400);
+  --uikit-color-accent-focus: var(--uikit-blue-400);
+
+  /* --- Status (solid) --- */
+  --uikit-color-danger: var(--uikit-red-500);
+  --uikit-color-success: var(--uikit-green-500);
+
+  /* --- Status (soft) --- */
+  --uikit-color-info-bg: #014361;
+  --uikit-color-info-text: #b8e7fb;
+  --uikit-color-success-bg: #1e4620;
+  --uikit-color-success-text: #cce8cd;
+  --uikit-color-warning-bg: #663c00;
+  --uikit-color-warning-text: #ffe2b7;
+  --uikit-color-error-bg: #5f2120;
+  --uikit-color-error-text: #f4c7c7;
+
+  /* --- Focus rings --- */
+  --uikit-color-ring-accent: rgba(59, 130, 246, 0.35);
+  --uikit-color-ring-error: rgba(239, 68, 68, 0.35);
+
+  /* --- Skeleton --- */
   --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.08);
 }

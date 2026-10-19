@@ -90,11 +90,11 @@
   justify-content: flex-end;
   gap: 8px;
   padding: 16px 20px;
-  border-top: 1px solid var(--uikit-color-secondary-border);
+  border-top: 1px solid var(--uikit-color-border);
 }
 
 .close:focus-visible {
-  outline: 2px solid var(--uikit-color-primary-bg-focus);
+  outline: 2px solid var(--uikit-color-accent-focus);
   outline-offset: 2px;
 }
 

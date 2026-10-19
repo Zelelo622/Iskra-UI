@@ -55,21 +55,21 @@
 }
 
 .info {
-  background-color: var(--uikit-color-alert-info-bg);
-  color: var(--uikit-color-alert-info-text);
+  background-color: var(--uikit-color-info-bg);
+  color: var(--uikit-color-info-text);
 }
 
 .success {
-  background-color: var(--uikit-color-alert-success-bg);
-  color: var(--uikit-color-alert-success-text);
+  background-color: var(--uikit-color-success-bg);
+  color: var(--uikit-color-success-text);
 }
 
 .warning {
-  background-color: var(--uikit-color-alert-warning-bg);
-  color: var(--uikit-color-alert-warning-text);
+  background-color: var(--uikit-color-warning-bg);
+  color: var(--uikit-color-warning-text);
 }
 
 .error {
-  background-color: var(--uikit-color-alert-error-bg);
-  color: var(--uikit-color-alert-error-text);
+  background-color: var(--uikit-color-error-bg);
+  color: var(--uikit-color-error-text);
 }

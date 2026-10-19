@@ -8,7 +8,7 @@
   justify-content: center;
   width: var(--spinner-size);
   height: var(--spinner-size);
-  color: var(--uikit-color-primary-bg);
+  color: var(--uikit-color-accent);
   flex-shrink: 0;
 }
 

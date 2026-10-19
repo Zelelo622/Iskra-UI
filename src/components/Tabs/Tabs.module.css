@@ -9,7 +9,7 @@
 .list {
   display: flex;
   gap: 4px;
-  border-bottom: 1px solid var(--uikit-color-secondary-border);
+  border-bottom: 1px solid var(--uikit-color-border);
 }
 
 .tab {
@@ -18,18 +18,18 @@
   border: none;
   border-bottom: 2px solid transparent;
   background: none;
-  color: var(--uikit-color-muted-text);
+  color: var(--uikit-color-text-muted);
   font: inherit;
   cursor: pointer;
 }
 
 .tab:hover:not(:disabled) {
-  color: var(--uikit-color-secondary-text);
+  color: var(--uikit-color-text);
 }
 
 .tab[aria-selected="true"] {
-  color: var(--uikit-color-secondary-text);
-  border-bottom-color: var(--uikit-color-primary-bg);
+  color: var(--uikit-color-text);
+  border-bottom-color: var(--uikit-color-accent);
 }
 
 .tab:disabled {
@@ -39,10 +39,10 @@
 
 .tab:focus-visible,
 .panel:focus-visible {
-  outline: 2px solid var(--uikit-color-primary-bg-focus);
+  outline: 2px solid var(--uikit-color-accent-focus);
   outline-offset: 2px;
 }
 
 .panel {
-  color: var(--uikit-color-secondary-text);
+  color: var(--uikit-color-text);
 }

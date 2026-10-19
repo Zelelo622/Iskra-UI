@@ -21,22 +21,22 @@
 }
 
 .primary {
-  background-color: var(--uikit-color-primary-bg);
-  color: var(--uikit-color-on-accent);
+  background-color: var(--uikit-color-accent);
+  color: var(--uikit-color-text-on-accent);
 }
 
 .primary:not(:disabled):hover {
-  background-color: var(--uikit-color-primary-bg-hover);
+  background-color: var(--uikit-color-accent-hover);
 }
 
 .secondary {
-  background-color: var(--uikit-color-secondary-bg);
-  border-color: var(--uikit-color-secondary-border);
-  color: var(--uikit-color-secondary-text);
+  background-color: var(--uikit-color-surface);
+  border-color: var(--uikit-color-border);
+  color: var(--uikit-color-text);
 }
 
 .secondary:not(:disabled):hover {
-  background-color: var(--uikit-color-secondary-bg-hover);
+  background-color: var(--uikit-color-surface-hover);
 }
 
 .sm {

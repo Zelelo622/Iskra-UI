@@ -1,23 +1,9 @@
-import { CSSProperties, HTMLAttributes, ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
+import { cx } from "src/utils/utils";
+import type { ISpinnerProps } from "./types";
+import { SPINNER_VARIANTS } from "./constants";
 
 import styles from "./Spinner.module.css";
-import { cx } from "src/utils/utils";
-
-const SPINNER_VARIANTS = {
-  circle: { items: 0 },
-  dots: { items: 3 },
-  spiral: { items: 5 },
-  propagate: { items: 6 },
-} as const satisfies Record<string, { items: number }>;
-
-export type TSpinnerVariant = keyof typeof SPINNER_VARIANTS;
-
-export interface ISpinnerProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: TSpinnerVariant;
-  size?: "sm" | "md" | "lg";
-  label?: string;
-  color?: string;
-}
 
 export const Spinner = ({
   variant = "circle",

@@ -1,17 +1,8 @@
 import { ReactNode, useEffect, useId, useRef } from "react";
+import { cx, toCss } from "src/utils/utils";
+import type { IModalProps } from "./types";
 
 import styles from "./Modal.module.css";
-import { cx, toCss, type TCssSize } from "src/utils/utils";
-
-export interface IModalProps {
-  open: boolean;
-  onClose: () => void;
-  title?: ReactNode;
-  footer?: ReactNode;
-  children: ReactNode;
-  size?: "sm" | "md" | "lg";
-  width?: TCssSize;
-}
 
 export const Modal = ({
   open,

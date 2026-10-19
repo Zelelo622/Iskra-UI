@@ -1,7 +1,9 @@
 import { createContext, ReactNode, useCallback, useMemo, useState } from "react";
-import { IToastProps, Toast } from "src/components/Toast/Toast";
+import { Toast } from "src/components/Toast/Toast";
 import { createPortal } from "react-dom";
 import { cx } from "src/utils/utils";
+import type { IToastProps } from "src/components/Toast/types";
+
 import styles from "./ToastContainer.module.css";
 
 export interface IToastOptions extends Pick<

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { IAccordionProps } from "./types";
+import type { IAccordionProps } from "./types";
 import { AccordionProvider } from "./AccordionProvider/AccordionProvider";
 import { cx } from "src/utils/utils";
 

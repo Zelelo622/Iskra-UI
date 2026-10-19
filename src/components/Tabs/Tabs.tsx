@@ -1,21 +1,9 @@
 import { useId, useRef, useState } from "react";
 import type { KeyboardEvent, ReactNode } from "react";
-import styles from "./Tabs.module.css";
+import type { ITabsProps } from "./types";
 import { cx } from "src/utils/utils";
 
-export interface ITabItem {
-  value: string;
-  label: ReactNode;
-  content: ReactNode;
-  disabled?: boolean;
-}
-
-export interface ITabsProps {
-  items: ITabItem[];
-  defaultValue?: string;
-  onChange?: (value: string) => void;
-  className?: string;
-}
+import styles from "./Tabs.module.css";
 
 export const Tabs = ({ items, defaultValue, onChange, className }: ITabsProps): ReactNode => {
   const [active, setActive] = useState(() => {

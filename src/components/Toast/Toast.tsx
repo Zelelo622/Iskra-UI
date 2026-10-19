@@ -3,22 +3,12 @@ import {
   useEffect,
   useRef,
   useState,
-  type HTMLAttributes,
   type ReactNode,
 } from "react";
 import { cx } from "src/utils/utils";
+import type { IToastProps } from "./types";
+
 import styles from "./Toast.module.css";
-
-export type TToastVariant = "info" | "success" | "warning" | "error";
-
-export interface IToastProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: TToastVariant;
-  title?: string;
-  closable?: boolean;
-  children?: ReactNode;
-  duration?: number;
-  onClose?: () => void;
-}
 
 export const Toast = ({
   variant = "info",

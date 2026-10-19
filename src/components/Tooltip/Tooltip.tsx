@@ -1,9 +1,8 @@
-import { cloneElement, HTMLAttributes, isValidElement, ReactElement, ReactNode, useState } from "react";
+import { cloneElement, isValidElement, ReactElement, ReactNode, useState } from "react";
 import {
   autoUpdate,
   flip,
   offset,
-  Placement,
   shift,
   useFloating,
   useFocus,
@@ -13,14 +12,9 @@ import {
   useRole,
 } from "@floating-ui/react";
 import { cx } from "src/utils/utils";
-import styles from "./Tooltip.module.css";
+import type { ITooltipProps } from "./types";
 
-export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, "content"> {
-  content: ReactNode;
-  children: ReactNode;
-  placement?: Placement;
-  delay?: number;
-}
+import styles from "./Tooltip.module.css";
 
 export const Tooltip = ({
   content,

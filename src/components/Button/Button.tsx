@@ -1,12 +1,8 @@
 import { forwardRef } from "react";
-import type { ButtonHTMLAttributes } from "react";
 import { cx } from "src/utils/utils";
-import styles from "./Button.module.css";
+import type { IButtonProps } from "./types";
 
-export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
-  size?: "sm" | "md" | "lg";
-}
+import styles from "./Button.module.css";
 
 export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   ({ variant = "primary", size = "md", type = "button", className, ...props }, ref) => {

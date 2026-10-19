@@ -1,14 +1,8 @@
-import { HTMLAttributes, ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 import { cx } from "src/utils/utils";
-import styles from "./Alert.module.css";
+import type { IAlertProps } from "./types";
 
-export interface IAlertProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: "info" | "success" | "warning" | "error";
-  title?: string;
-  closable?: boolean;
-  onClose?: () => void;
-  children?: ReactNode;
-}
+import styles from "./Alert.module.css";
 
 export const Alert = ({
   variant = "info",

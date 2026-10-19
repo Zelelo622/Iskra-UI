@@ -1,17 +1,8 @@
-import { CSSProperties, HTMLAttributes, ReactNode } from "react";
-import { cx, toCss, type TCssSize as TSize } from "src/utils/utils";
+import { CSSProperties, ReactNode } from "react";
+import { cx, toCss } from "src/utils/utils";
+import type { ISkeletonProps } from "./types";
+
 import styles from "./Skeleton.module.css";
-
-export interface ISkeletonProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: "text" | "rect" | "circle";
-  width?: TSize;
-  height?: TSize;
-  radius?: TSize;
-  lines?: number;
-  animation?: "pulse" | "wave";
-  loading?: boolean;
-}
-
 
 export const Skeleton = ({
   variant = "text",

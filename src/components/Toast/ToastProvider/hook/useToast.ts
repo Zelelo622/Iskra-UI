@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { IToastOptions, ToastContext } from "src/components/Toast/ToastProvider/ToastProvider";
-import { TToastVariant } from "src/components/Toast/Toast";
+import type { TToastVariant } from "src/components/Toast/types";
 
 type TShowByVariant = (options?: Omit<IToastOptions, "variant">) => string;
 

@@ -1,12 +1,8 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import { cx } from "src/utils/utils";
-import styles from "./Badge.module.css";
+import type { IBadgeProps } from "./types";
 
-export interface IBadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, "children"> {
-  color?: "red" | "green" | "blue";
-  count?: number;
-  max?: number;
-}
+import styles from "./Badge.module.css";
 
 const formatCount = (count: number, max: number): string => {
   if (count > max) {

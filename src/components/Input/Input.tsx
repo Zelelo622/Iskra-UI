@@ -31,7 +31,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
     const describeBy = [ariaDescribedBy, messageId].filter(Boolean).join(" ") || undefined;
 
     return (
-      <div className={cx(styles.root, className)}>
+      <div className={cx(styles.root, styles[size], className)}>
         {label && (
           <label htmlFor={inputId} className={styles.label}>
             {label}{" "}
@@ -45,7 +45,6 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
         <div
           className={cx(
             styles.field,
-            styles[size],
             hasError && styles.invalid,
             disabled && styles.disabled,
           )}

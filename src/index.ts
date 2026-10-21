@@ -8,3 +8,4 @@ export * from "./components/Spinner";
 export * from "./components/Tabs";
 export * from "./components/Toast";
 export * from "./components/Tooltip";
+export * from "./components/Input";

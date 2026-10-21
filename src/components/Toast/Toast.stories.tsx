@@ -1,5 +1,6 @@
 import { Story } from "@ladle/react";
-import { Toast, IToastProps } from "./Toast";
+import { Toast } from "./Toast";
+import type { IToastProps } from "./types";
 import { useToast } from "./ToastProvider/hook/useToast";
 import { ToastProvider } from "./ToastProvider/ToastProvider";
 import { Button } from "src/components/Button/Button";

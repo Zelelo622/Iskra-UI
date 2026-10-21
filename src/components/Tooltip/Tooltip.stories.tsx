@@ -1,5 +1,6 @@
 import { Story } from "@ladle/react";
-import { Tooltip, ITooltipProps } from "./Tooltip";
+import { Tooltip } from "./Tooltip";
+import { ITooltipProps } from "./types";
 import { Button } from "../Button/Button";
 import { Placement } from "@floating-ui/react";
 
@@ -34,7 +35,7 @@ export const Placements: Story<ITooltipProps> = (props) => (
     }}
   >
     {PLACEMENT_GROUPS.map((group) => (
-      <div key={group[0]} style={{display: "flex", gap: "2rem"}}>
+      <div key={group[0]} style={{ display: "flex", gap: "2rem" }}>
         {group.map((placement) => (
           <Tooltip {...props} key={placement} content={placement} placement={placement}>
             <Button>{placement}</Button>

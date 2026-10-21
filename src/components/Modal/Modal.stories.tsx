@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { ArgTypes, Story } from "@ladle/react";
 import { Modal } from "./Modal";
-import type { IModalProps } from "./Modal";
+import type { IModalProps } from "./types";
 import { Button } from "../Button/Button";
 
 export default {

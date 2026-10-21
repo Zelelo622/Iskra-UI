@@ -1,5 +1,6 @@
 import type { ArgType, Story } from "@ladle/react";
-import { Skeleton, ISkeletonProps } from "./Skeleton";
+import { Skeleton } from "./Skeleton";
+import type { ISkeletonProps } from "./types";
 import { Button } from "src/components/Button/Button";
 
 export default {

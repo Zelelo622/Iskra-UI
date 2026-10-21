@@ -1,5 +1,6 @@
 import type { ArgType, Story } from "@ladle/react";
-import { Spinner, ISpinnerProps } from "./Spinner";
+import { Spinner } from "./Spinner";
+import type { ISpinnerProps } from "./types";
 
 export default {
   title: "Spinner",

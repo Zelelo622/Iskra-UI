@@ -55,3 +55,55 @@ export const Error: Story<IInputProps> = (props) => (
 );
 Error.args = { size: "md", error: "Ошибка" };
 Error.argTypes = { size: sizeArgType };
+
+export const IconStart: Story<IInputProps> = (props) => (
+  <InputWrapper>
+    <Input {...props} label="Email" placeholder="you@example.com" />
+  </InputWrapper>
+);
+IconStart.args = {
+  size: "md",
+  startIcon: (
+    <svg
+      xmlns="http://w3.org"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="16 18 22 12 16 6"></polyline>
+      <polyline points="8 6 2 12 8 18"></polyline>
+    </svg>
+  ),
+};
+IconStart.argTypes = { size: sizeArgType };
+
+export const IconEnd: Story<IInputProps> = (props) => (
+  <InputWrapper>
+    <Input {...props} label="Email" placeholder="you@example.com" />
+  </InputWrapper>
+);
+IconEnd.args = {
+  size: "md",
+  endIcon: (
+    <svg
+      xmlns="http://w3.org"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="16 18 22 12 16 6"></polyline>
+      <polyline points="8 6 2 12 8 18"></polyline>
+    </svg>
+  ),
+};
+IconEnd.argTypes = { size: sizeArgType };

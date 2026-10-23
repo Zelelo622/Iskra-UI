@@ -1,0 +1,114 @@
+@import "../../styles/tokens.css";
+
+.sm {
+  --checkbox-size: 14px;
+  --checkbox-radius: 3px;
+  --checkbox-gap: 6px;
+  --checkbox-label-size: var(--uikit-font-size-xs);
+  --checkbox-message-size: var(--uikit-font-size-2xs);
+}
+.md {
+  --checkbox-size: 16px;
+  --checkbox-radius: 4px;
+  --checkbox-gap: 8px;
+  --checkbox-label-size: var(--uikit-font-size-sm);
+  --checkbox-message-size: var(--uikit-font-size-xs);
+}
+.lg {
+  --checkbox-size: 20px;
+  --checkbox-radius: 4px;
+  --checkbox-gap: 10px;
+  --checkbox-label-size: var(--uikit-font-size-md);
+  --checkbox-message-size: var(--uikit-font-size-sm);
+}
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--checkbox-gap);
+  font-size: var(--checkbox-label-size);
+  color: var(--uikit-color-text);
+  cursor: pointer;
+}
+
+.input {
+  appearance: none;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  margin: 0;
+  border: 1.5px solid var(--uikit-color-text-muted);
+  border-radius: var(--checkbox-radius);
+  background: var(--uikit-color-surface) center / 100% no-repeat;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--uikit-color-accent);
+}
+
+.input:checked,
+.input:indeterminate {
+  border-color: var(--uikit-color-accent);
+  background-color: var(--uikit-color-accent);
+}
+
+.input:checked:hover:not(:disabled),
+.input:indeterminate:hover:not(:disabled) {
+  border-color: var(--uikit-color-accent-hover);
+  background-color: var(--uikit-color-accent-hover);
+}
+
+.input:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3.5 8.5 6.5 11.5 12.5 4.5'/%3E%3C/svg%3E");
+}
+
+.input:indeterminate {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='4' y1='8' x2='12' y2='8'/%3E%3C/svg%3E");
+}
+
+.input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-accent);
+}
+
+.input[aria-invalid="true"]:not(:checked):not(:indeterminate) {
+  border-color: var(--uikit-color-danger);
+}
+.input[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-error);
+}
+
+.disabled {
+  opacity: 0.5;
+}
+.disabled .label,
+.disabled .input {
+  cursor: not-allowed;
+}
+
+.required {
+  color: var(--uikit-color-danger);
+}
+
+.error {
+  margin: 4px 0 0;
+  padding-left: calc(var(--checkbox-size) + var(--checkbox-gap));
+  font-size: var(--checkbox-message-size);
+  color: var(--uikit-color-danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}

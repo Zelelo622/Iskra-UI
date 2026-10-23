@@ -1,0 +1,91 @@
+@import "../../styles/tokens.css";
+
+.sm {
+  --switch-width: 28px;
+  --switch-height: 16px;
+  --switch-font-size: var(--uikit-font-size-xs);
+}
+.md {
+  --switch-width: 36px;
+  --switch-height: 20px;
+  --switch-font-size: var(--uikit-font-size-sm);
+}
+.lg {
+  --switch-width: 44px;
+  --switch-height: 24px;
+  --switch-font-size: var(--uikit-font-size-md);
+}
+
+.root {
+  --switch-gap: 2px;
+  --switch-thumb: calc(var(--switch-height) - var(--switch-gap) * 2);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--switch-font-size);
+  color: var(--uikit-color-text);
+  cursor: pointer;
+}
+
+/* Скрыт визуально, но остаётся в таб-порядке и для скринридера.
+   Не display:none — иначе переключатель пропадёт с клавиатуры. */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.track {
+  position: relative;
+  flex: none;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  border-radius: 999px;
+  background: var(--uikit-color-border);
+  transition: background-color 0.15s ease;
+}
+
+.thumb {
+  position: absolute;
+  top: var(--switch-gap);
+  left: var(--switch-gap);
+  width: var(--switch-thumb);
+  height: var(--switch-thumb);
+  border-radius: 50%;
+  background: var(--uikit-white);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+  transition: transform 0.15s ease;
+}
+
+.input:checked + .track {
+  background: var(--uikit-color-accent);
+}
+.input:checked + .track .thumb {
+  transform: translateX(calc(var(--switch-width) - var(--switch-thumb) - var(--switch-gap) * 2));
+}
+
+.root:hover .input:not(:disabled):not(:checked) + .track {
+  background: var(--uikit-color-border-hover);
+}
+.root:hover .input:not(:disabled):checked + .track {
+  background: var(--uikit-color-accent-hover);
+}
+
+.input:focus-visible + .track {
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-accent);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track,
+  .thumb {
+    transition: none;
+  }
+}

@@ -11,6 +11,10 @@ const sizeArgType: ArgType<ISwitchProps["size"]> = {
   control: { type: "radio" },
 };
 
-export const Basic: Story<ISwitchProps> = (props) => <Switch {...props} label="Уведомления" />;
+export const Basic: Story<ISwitchProps> = (props) => <Switch {...props} />;
 Basic.args = { size: "md", disabled: false };
 Basic.argTypes = { size: sizeArgType };
+
+export const WithLabel: Story<ISwitchProps> = (props) => <Switch {...props} label="Уведомления" />;
+WithLabel.args = { size: "md", disabled: false };
+WithLabel.argTypes = { size: sizeArgType };

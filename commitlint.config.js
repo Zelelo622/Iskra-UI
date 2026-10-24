@@ -12,6 +12,7 @@ export default {
         "checkbox",
         "input",
         "modal",
+        "radio",
         "skeleton",
         "spinner",
         "switch",

@@ -30,7 +30,15 @@ export const Radio = forwardRef<HTMLInputElement, IRadioProps>(
     const describeBy = [ariaDescribedBy, messageId].filter(Boolean).join(" ") || undefined;
 
     return (
-      <div className={cx(styles.root, styles[size], disabled && styles.disabled, className)}>
+      <div
+        className={cx(
+          styles.root,
+          styles[size],
+          disabled && styles.disabled,
+          hasError && styles.hasError,
+          className,
+        )}
+      >
         <label className={styles.label}>
           <input
             ref={ref}

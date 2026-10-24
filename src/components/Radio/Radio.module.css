@@ -1,0 +1,107 @@
+@import "../../styles/tokens.css";
+
+.sm {
+  --radio-size: 14px;
+  --radio-dot-space: 2px;
+  --radio-gap: 6px;
+  --radio-label-size: var(--uikit-font-size-xs);
+  --radio-message-size: var(--uikit-font-size-2xs);
+}
+.md {
+  --radio-size: 16px;
+  --radio-dot-space: 3px;
+  --radio-gap: 8px;
+  --radio-label-size: var(--uikit-font-size-sm);
+  --radio-message-size: var(--uikit-font-size-xs);
+}
+.lg {
+  --radio-size: 20px;
+  --radio-dot-space: 4px;
+  --radio-gap: 10px;
+  --radio-label-size: var(--uikit-font-size-md);
+  --radio-message-size: var(--uikit-font-size-sm);
+}
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--radio-gap);
+  font-size: var(--radio-label-size);
+  color: var(--uikit-color-text);
+  cursor: pointer;
+}
+
+.input {
+  appearance: none;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--radio-size);
+  height: var(--radio-size);
+  margin: 0;
+  border: 1.5px solid var(--uikit-color-text-muted);
+  border-radius: 50%;
+  background: var(--uikit-color-surface) center / 100% no-repeat;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--uikit-color-accent);
+}
+
+.input:checked {
+  border-color: var(--uikit-color-accent);
+  background-color: var(--uikit-color-accent);
+  padding: var(--radio-dot-space);
+  background-clip: content-box;
+}
+
+.input:checked:hover:not(:disabled) {
+  border-color: var(--uikit-color-accent-hover);
+  background-color: var(--uikit-color-accent-hover);
+}
+
+.input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-accent);
+}
+
+.hasError .input:not(:checked) {
+  border-color: var(--uikit-color-danger);
+}
+
+.hasError .input:focus-visible {
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-error);
+}
+
+.disabled {
+  opacity: 0.5;
+}
+.disabled .label,
+.disabled .input {
+  cursor: not-allowed;
+}
+
+.required {
+  color: var(--uikit-color-danger);
+}
+
+.error {
+  margin: 4px 0 0;
+  padding-left: calc(var(--radio-size) + var(--radio-gap));
+  font-size: var(--radio-message-size);
+  color: var(--uikit-color-danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}

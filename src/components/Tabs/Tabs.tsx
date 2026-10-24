@@ -1,7 +1,9 @@
-import { useId, useRef, useState } from "react";
 import type { KeyboardEvent, ReactNode } from "react";
-import type { ITabsProps } from "./types";
+import { useId, useRef, useState } from "react";
+
 import { cx } from "src/utils/utils";
+
+import type { ITabsProps } from "./types";
 
 import styles from "./Tabs.module.css";
 

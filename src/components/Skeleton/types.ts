@@ -1,5 +1,6 @@
-import { HTMLAttributes } from "react";
-import { TCssSize } from "src/utils/utils";
+import type { HTMLAttributes } from "react";
+
+import type { TCssSize } from "src/utils/utils";
 
 export interface ISkeletonProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: "text" | "rect" | "circle";

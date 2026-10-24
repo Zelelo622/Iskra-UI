@@ -1,7 +1,10 @@
-import { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+
 import { cx } from "src/utils/utils";
-import type { ISpinnerProps } from "./types";
+
 import { SPINNER_VARIANTS } from "./constants";
+
+import type { ISpinnerProps } from "./types";
 
 import styles from "./Spinner.module.css";
 

@@ -1,4 +1,5 @@
-import { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
+
 import type { SPINNER_VARIANTS } from "./constants";
 
 export type TSpinnerVariant = keyof typeof SPINNER_VARIANTS;

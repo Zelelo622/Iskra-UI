@@ -1,6 +1,8 @@
 import { forwardRef, useId } from "react";
-import { IInputProps } from "./types";
+
 import { cx } from "src/utils/utils";
+
+import type { IInputProps } from "./types";
 
 import styles from "./Input.module.css";
 
@@ -42,13 +44,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
             )}
           </label>
         )}
-        <div
-          className={cx(
-            styles.field,
-            hasError && styles.invalid,
-            disabled && styles.disabled,
-          )}
-        >
+        <div className={cx(styles.field, hasError && styles.invalid, disabled && styles.disabled)}>
           {startIcon && <span className={styles.icon}>{startIcon}</span>}
           <input
             ref={ref}

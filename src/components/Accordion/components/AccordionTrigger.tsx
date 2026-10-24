@@ -1,8 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+
 import { cx } from "src/utils/utils";
+
 import { useAccordion } from "../hooks/useAccordion";
 import { useAccordionItem } from "../hooks/useAccordionItem";
-import { IAccordionTriggerProps } from "../types";
+
+import type { IAccordionTriggerProps } from "../types";
 
 import styles from "../Accordion.module.css";
 

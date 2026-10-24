@@ -1,8 +1,11 @@
 import { useState } from "react";
-import type { ArgTypes, Story } from "@ladle/react";
-import { Modal } from "./Modal";
-import type { IModalProps } from "./types";
+
 import { Button } from "../Button/Button";
+
+import { Modal } from "./Modal";
+
+import type { IModalProps } from "./types";
+import type { ArgTypes, Story } from "@ladle/react";
 
 export default {
   title: "Modal",
@@ -78,8 +81,8 @@ LongContent.argTypes = argTypes;
 
 export const CustomWidth: Story<ModalStoryProps> = (props) => (
   <ModalDemo {...props}>
-    Ширина задана пропом width и перекрывает size. На узком экране модалка всё равно ужимается
-    до ширины окна.
+    Ширина задана пропом width и перекрывает size. На узком экране модалка всё равно ужимается до
+    ширины окна.
   </ModalDemo>
 );
 CustomWidth.args = { title: "Своя ширина", width: 720 };

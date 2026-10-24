@@ -2,10 +2,25 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["react", "typescript", "unicorn", "import", "jsx-a11y", "vitest"],
   "categories": {
-    "correctness": "error"
+    "correctness": "error",
+    "suspicious": "error"
   },
   "rules": {
     "typescript/explicit-module-boundary-types": "error",
+    "import/no-cycle": "error",
+    "import/no-duplicates": "error",
+    "import/no-self-import": "error",
+    "import/no-unassigned-import": "error",
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+
+    "react/react-in-jsx-scope": "off",
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-key": "error",
+    "react/jsx-no-useless-fragment": "error",
+    "react/self-closing-comp": "error",
+
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-proptypes": "error",
     "jsx-a11y/role-has-required-aria-props": "error",
@@ -13,8 +28,11 @@
     "jsx-a11y/no-static-element-interactions": "error",
     "jsx-a11y/prefer-tag-over-role": "off"
   },
-  "env": {
-    "builtin": true
-  },
-  "ignorePatterns": ["dist", "build", "node_modules"]
+  "overrides": [
+    {
+      "files": ["vitest.setup.ts", "**/*.setup.ts", "**/*.d.ts"],
+      "rules": { "import/no-unassigned-import": "off" }
+    }
+  ],
+  "ignorePatterns": ["dist", "build", "node_modules", "coverage", ".ladle"]
 }

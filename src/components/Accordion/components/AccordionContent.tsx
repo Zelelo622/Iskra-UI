@@ -1,8 +1,12 @@
-import { ReactNode } from "react";
-import styles from "../Accordion.module.css";
-import { IAccordionContentProps } from "../types";
-import { useAccordionItem } from "../hooks/useAccordionItem";
+import type { ReactNode } from "react";
+
 import { cx } from "src/utils/utils";
+
+import { useAccordionItem } from "../hooks/useAccordionItem";
+
+import type { IAccordionContentProps } from "../types";
+
+import styles from "../Accordion.module.css";
 
 export const AccordionContent = ({
   className,

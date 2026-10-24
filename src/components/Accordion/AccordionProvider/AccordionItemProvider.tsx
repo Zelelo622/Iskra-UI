@@ -1,8 +1,9 @@
-import { ReactNode, useId } from "react";
-import { useAccordion } from "../hooks/useAccordion";
-import { AccordionItemContext } from "../context";
+import { type ReactNode, useId } from "react";
 
-interface IAccardionItemProviderProps {
+import { AccordionItemContext } from "../context";
+import { useAccordion } from "../hooks/useAccordion";
+
+interface IAccordionItemProviderProps {
   value: string;
   disabled?: boolean;
   children: ReactNode;
@@ -12,7 +13,7 @@ export const AccordionItemProvider = ({
   value,
   disabled: itemDisabled,
   children,
-}: IAccardionItemProviderProps): ReactNode => {
+}: IAccordionItemProviderProps): ReactNode => {
   const { openValues, disabled: rootDisabled } = useAccordion();
 
   const isOpen = openValues.includes(value);

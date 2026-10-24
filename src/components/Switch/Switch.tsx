@@ -1,6 +1,9 @@
-import { forwardRef, ReactElement } from "react";
-import type { ISwitchProps } from "./types";
+import type { ReactElement } from "react";
+import { forwardRef } from "react";
+
 import { cx } from "src/utils/utils";
+
+import type { ISwitchProps } from "./types";
 
 import styles from "./Switch.module.css";
 

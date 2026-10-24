@@ -1,6 +1,7 @@
-import type { Story } from "@ladle/react";
 import { Button } from "./Button";
+
 import type { IButtonProps } from "./types";
+import type { Story } from "@ladle/react";
 
 export default {
   title: "Button",

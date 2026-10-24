@@ -1,6 +1,9 @@
-import { forwardRef, ReactElement, useEffect, useId, useImperativeHandle, useRef } from "react";
-import type { ICheckboxProps } from "./types";
+import type { ReactElement } from "react";
+import { forwardRef, useEffect, useId, useImperativeHandle, useRef } from "react";
+
 import { cx } from "src/utils/utils";
+
+import type { ICheckboxProps } from "./types";
 
 import styles from "./Checkbox.module.css";
 
@@ -37,9 +40,7 @@ export const Checkbox = forwardRef<HTMLInputElement, ICheckboxProps>(
     }, [indeterminate]);
 
     return (
-      <div
-        className={cx(styles.root, styles[size], disabled && styles.disabled, className)}
-      >
+      <div className={cx(styles.root, styles[size], disabled && styles.disabled, className)}>
         <label className={styles.label}>
           <input
             id={checkboxId}

@@ -1,5 +1,8 @@
-import { ReactNode, useEffect, useId, useRef } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useId, useRef } from "react";
+
 import { cx, toCss } from "src/utils/utils";
+
 import type { IModalProps } from "./types";
 
 import styles from "./Modal.module.css";

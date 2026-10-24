@@ -1,6 +1,7 @@
-import type { ArgType, Story } from "@ladle/react";
 import { Spinner } from "./Spinner";
+
 import type { ISpinnerProps } from "./types";
+import type { ArgType, Story } from "@ladle/react";
 
 export default {
   title: "Spinner",
@@ -23,6 +24,8 @@ export const Spiral: Story<ISpinnerProps> = (props) => <Spinner {...props} varia
 Spiral.args = { size: "md" };
 Spiral.argTypes = { size: sizeArgType };
 
-export const Propagate: Story<ISpinnerProps> = (props) => <Spinner {...props} variant="propagate" />;
+export const Propagate: Story<ISpinnerProps> = (props) => (
+  <Spinner {...props} variant="propagate" />
+);
 Propagate.args = { size: "md" };
 Propagate.argTypes = { size: sizeArgType };

@@ -1,5 +1,6 @@
-import { Placement } from "@floating-ui/react";
-import { HTMLAttributes, ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
+
+import type { Placement } from "@floating-ui/react";
 
 export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, "content"> {
   content: ReactNode;

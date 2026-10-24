@@ -1,8 +1,10 @@
-import { Story } from "@ladle/react";
-import { Tooltip } from "./Tooltip";
-import { ITooltipProps } from "./types";
 import { Button } from "../Button/Button";
-import { Placement } from "@floating-ui/react";
+
+import { Tooltip } from "./Tooltip";
+
+import type { ITooltipProps } from "./types";
+import type { Placement } from "@floating-ui/react";
+import type { Story } from "@ladle/react";
 
 export default {
   title: "Tooltip",

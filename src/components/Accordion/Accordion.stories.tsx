@@ -1,10 +1,12 @@
-import type { Story } from "@ladle/react";
 import { useState } from "react";
+
 import { Accordion } from "./Accordion";
-import { IAccordionProps } from "./types";
+import { AccordionContent } from "./components/AccordionContent";
 import { AccordionItem } from "./components/AccordionItem";
 import { AccordionTrigger } from "./components/AccordionTrigger";
-import { AccordionContent } from "./components/AccordionContent";
+
+import type { IAccordionProps } from "./types";
+import type { Story } from "@ladle/react";
 
 export default {
   title: "Accordion",

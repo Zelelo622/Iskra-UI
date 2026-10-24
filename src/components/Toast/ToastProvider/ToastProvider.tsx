@@ -1,8 +1,10 @@
-import { createContext, ReactNode, useCallback, useMemo, useState } from "react";
-import { Toast } from "src/components/Toast/Toast";
+import { createContext, type ReactNode, useCallback, useMemo, useState } from "react";
+
 import { createPortal } from "react-dom";
-import { cx } from "src/utils/utils";
+
+import { Toast } from "src/components/Toast/Toast";
 import type { IToastProps } from "src/components/Toast/types";
+import { cx } from "src/utils/utils";
 
 import styles from "./ToastContainer.module.css";
 
@@ -56,7 +58,9 @@ export const ToastProvider = ({
     return id;
   }, []);
 
-  const value = useMemo(() => ({ show, close }), [show, close]);
+  const value = useMemo(() => {
+    return { show, close };
+  }, [show, close]);
 
   return (
     <ToastContext.Provider value={value}>

@@ -1,5 +1,7 @@
-import { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+
 import { cx, toCss } from "src/utils/utils";
+
 import type { ISkeletonProps } from "./types";
 
 import styles from "./Skeleton.module.css";

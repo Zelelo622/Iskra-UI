@@ -1,7 +1,9 @@
-import { ArgType, Story } from "@ladle/react";
-import type { IInputProps } from "./types";
+import type { ReactElement } from "react";
+
 import { Input } from "./Input";
-import { ReactElement } from "react";
+
+import type { IInputProps } from "./types";
+import type { ArgType, Story } from "@ladle/react";
 
 export default {
   title: "Input",
@@ -75,8 +77,8 @@ IconStart.args = {
       stroke-linecap="round"
       stroke-linejoin="round"
     >
-      <polyline points="16 18 22 12 16 6"></polyline>
-      <polyline points="8 6 2 12 8 18"></polyline>
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
     </svg>
   ),
 };
@@ -101,8 +103,8 @@ IconEnd.args = {
       stroke-linecap="round"
       stroke-linejoin="round"
     >
-      <polyline points="16 18 22 12 16 6"></polyline>
-      <polyline points="8 6 2 12 8 18"></polyline>
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
     </svg>
   ),
 };

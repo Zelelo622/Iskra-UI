@@ -1,5 +1,7 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+
 import { cx } from "src/utils/utils";
+
 import type { IBadgeProps } from "./types";
 
 import styles from "./Badge.module.css";

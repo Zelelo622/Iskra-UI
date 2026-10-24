@@ -1,11 +1,7 @@
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+
 import { cx } from "src/utils/utils";
+
 import type { IToastProps } from "./types";
 
 import styles from "./Toast.module.css";

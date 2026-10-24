@@ -1,5 +1,8 @@
-import { ReactNode, useState } from "react";
+import type { ReactNode } from "react";
+import { useState } from "react";
+
 import { cx } from "src/utils/utils";
+
 import type { IAlertProps } from "./types";
 
 import styles from "./Alert.module.css";

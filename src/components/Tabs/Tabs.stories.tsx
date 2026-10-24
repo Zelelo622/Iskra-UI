@@ -1,6 +1,7 @@
-import type { Story } from "@ladle/react";
 import { Tabs } from "./Tabs";
+
 import type { ITabsProps } from "./types";
+import type { Story } from "@ladle/react";
 
 export default {
   title: "Tabs",

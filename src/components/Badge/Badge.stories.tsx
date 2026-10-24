@@ -1,6 +1,7 @@
-import { Story } from "@ladle/react";
 import { Badge } from "./Badge";
+
 import type { IBadgeProps } from "./types";
+import type { Story } from "@ladle/react";
 
 export default {
   title: "Badge",

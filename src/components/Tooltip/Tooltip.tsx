@@ -1,4 +1,6 @@
-import { cloneElement, isValidElement, ReactElement, ReactNode, useState } from "react";
+import type { ReactElement, ReactNode } from "react";
+import { cloneElement, isValidElement, useState } from "react";
+
 import {
   autoUpdate,
   flip,
@@ -11,7 +13,9 @@ import {
   useMergeRefs,
   useRole,
 } from "@floating-ui/react";
+
 import { cx } from "src/utils/utils";
+
 import type { ITooltipProps } from "./types";
 
 import styles from "./Tooltip.module.css";

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export interface ITabItem {
   value: string;
@@ -12,4 +12,4 @@ export interface ITabsProps {
   defaultValue?: string;
   onChange?: (value: string) => void;
   className?: string;
-} 
+}

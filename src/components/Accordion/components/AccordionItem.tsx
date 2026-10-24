@@ -1,7 +1,10 @@
-import { ReactNode } from "react";
-import { IAccordionItemProps } from "../types";
-import { AccordionItemProvider } from "../AccordionProvider/AccordionItemProvider";
+import type { ReactNode } from "react";
+
 import { cx } from "src/utils/utils";
+
+import { AccordionItemProvider } from "../AccordionProvider/AccordionItemProvider";
+
+import type { IAccordionItemProps } from "../types";
 
 import styles from "../Accordion.module.css";
 

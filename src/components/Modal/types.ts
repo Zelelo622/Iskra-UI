@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
-import { TCssSize } from "src/utils/utils";
+import type { ReactNode } from "react";
+
+import type { TCssSize } from "src/utils/utils";
 
 export interface IModalProps {
   open: boolean;

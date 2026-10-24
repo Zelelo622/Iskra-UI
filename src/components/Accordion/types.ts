@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, HTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, HTMLAttributes } from "react";
 
 export interface IAccordionProps extends Omit<HTMLAttributes<HTMLDivElement>, "defaultValue"> {
   type?: "single" | "multiple";

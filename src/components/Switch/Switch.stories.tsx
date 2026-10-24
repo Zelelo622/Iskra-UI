@@ -1,6 +1,7 @@
-import type { ArgType, Story } from "@ladle/react";
 import { Switch } from "./Switch";
+
 import type { ISwitchProps } from "./types";
+import type { ArgType, Story } from "@ladle/react";
 
 export default {
   title: "Switch",

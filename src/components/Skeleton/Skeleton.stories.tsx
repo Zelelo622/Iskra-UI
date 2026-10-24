@@ -1,7 +1,9 @@
-import type { ArgType, Story } from "@ladle/react";
-import { Skeleton } from "./Skeleton";
-import type { ISkeletonProps } from "./types";
 import { Button } from "src/components/Button/Button";
+
+import { Skeleton } from "./Skeleton";
+
+import type { ISkeletonProps } from "./types";
+import type { ArgType, Story } from "@ladle/react";
 
 export default {
   title: "Skeleton",
@@ -40,10 +42,7 @@ SizedByChildren.args = { animation: "pulse", radius: 6 };
 SizedByChildren.argTypes = { animation: animationArgType };
 
 export const Card: Story<ISkeletonProps> = ({ loading, animation }) => (
-  <div
-    aria-busy={loading}
-    style={{ display: "flex", gap: "1rem", maxWidth: 360, padding: "1rem" }}
-  >
+  <div aria-busy={loading} style={{ display: "flex", gap: "1rem", maxWidth: 360, padding: "1rem" }}>
     <Skeleton variant="circle" width={48} loading={loading} animation={animation}>
       <div
         style={{

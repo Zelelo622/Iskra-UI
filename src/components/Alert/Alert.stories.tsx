@@ -1,6 +1,7 @@
-import { Story } from "@ladle/react";
 import { Alert } from "./Alert";
+
 import type { IAlertProps } from "./types";
+import type { Story } from "@ladle/react";
 
 export default {
   title: "Alert",

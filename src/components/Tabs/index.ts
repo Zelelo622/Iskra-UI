@@ -1,2 +1,2 @@
 export { Tabs } from "./Tabs";
-export type { ITabsProps, ITabItem } from "./types";
+export type { ITabItem, ITabsProps } from "./types";

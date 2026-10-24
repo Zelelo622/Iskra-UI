@@ -1,0 +1,31 @@
+export default {
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    "scope-enum": [
+      2,
+      "always",
+      [
+        "accordion",
+        "alert",
+        "badge",
+        "button",
+        "checkbox",
+        "input",
+        "modal",
+        "skeleton",
+        "spinner",
+        "switch",
+        "tabs",
+        "toast",
+        "tooltip",
+        "tokens",
+        "build",
+        "deps",
+        "lint",
+        "ci",
+        "docs",
+      ],
+    ],
+    "subject-case": [2, "never", ["upper-case"]],
+  },
+};

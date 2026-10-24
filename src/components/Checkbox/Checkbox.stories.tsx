@@ -24,6 +24,18 @@ export const Required: Story<ICheckboxProps> = (props) => (
 Required.args = { size: "md", disabled: false };
 Required.argTypes = { size: sizeArgType };
 
+export const WithError: Story<ICheckboxProps> = (props) => (
+  <Checkbox label="Принимаю условия" error="Ошибка" {...props} />
+);
+WithError.args = { size: "md", disabled: false };
+WithError.argTypes = { size: sizeArgType };
+
+export const Disabled: Story<ICheckboxProps> = (props) => (
+  <Checkbox label="Принимаю условия" disabled {...props} />
+);
+Disabled.args = { size: "md" };
+Disabled.argTypes = { size: sizeArgType };
+
 const FRUITS = ["Яблоки", "Груши", "Сливы"];
 
 const IndeterminateDemo = (props: ICheckboxProps) => {

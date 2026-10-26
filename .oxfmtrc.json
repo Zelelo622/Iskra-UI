@@ -9,5 +9,14 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "ignorePatterns": ["dist/**", "build/**", "coverage/**", ".ladle/**", "**/*.min.js"]
+  "ignorePatterns": [
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    ".ladle/**",
+    "**/*.min.js",
+    "package-lock.json",
+    "CHANGELOG.md",
+    ".release-please-manifest.json"
+  ]
 }

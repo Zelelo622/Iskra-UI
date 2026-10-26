@@ -5,15 +5,20 @@ pre-commit:
       glob: "**/*.{ts,tsx}"
       run: npx oxlint {staged_files}
     eslint:
-      glob: "**/*.{ts,tsx}"
+      glob: "src/**/*.{ts,tsx}"
       run: npx eslint {staged_files}
     oxfmt:
-      glob: "**/*.{ts,tsx,css,md,json}"
-      run: npx oxfmt --check {staged_files}
+      glob: "**/*.{ts,tsx,js,css,md,json,yml,yaml}"
+      exclude:
+        - package-lock.json
+        - CHANGELOG.md
+        - .release-please-manifest.json
+      run: npx oxfmt {staged_files}
+      stage_fixed: true
 
 commit-msg:
   commands:
-    lint-commit-msg:
+    commitlint:
       run: npx commitlint --edit {1}
 
 pre-push:

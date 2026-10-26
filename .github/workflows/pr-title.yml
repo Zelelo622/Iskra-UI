@@ -1,7 +1,5 @@
 name: PR title
 
-# With squash merge the PR title becomes the commit in main, and release-please
-# builds the changelog from it, so it has to pass the same commitlint rules.
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]

@@ -97,4 +97,4 @@ export const Toast = ({
   );
 };
 
-Toast.displayName = "Button";
+Toast.displayName = "Toast";

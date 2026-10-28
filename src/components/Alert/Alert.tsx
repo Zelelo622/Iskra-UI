@@ -33,7 +33,7 @@ export const Alert = ({
     <div className={classes} role="alert" {...props}>
       <div className={styles.content}>
         {title && <div className={styles.title}>{title}</div>}
-        {title && <div className={styles.description}>{children}</div>}
+        {children && <div className={styles.description}>{children}</div>}
       </div>
 
       {closable && (

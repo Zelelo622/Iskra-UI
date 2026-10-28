@@ -4,7 +4,7 @@ import { cx } from "src/utils/utils";
 
 import { RadioGroupProvider } from "./RadioGroupProvider/RadioGroupProvider";
 
-import type { IRadioGroupProps } from "./type";
+import type { IRadioGroupProps } from "./types";
 
 import styles from "./RadioGroup.module.css";
 

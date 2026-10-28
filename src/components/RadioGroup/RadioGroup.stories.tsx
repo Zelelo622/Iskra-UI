@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Radio } from "../Radio/Radio";
+import { Radio } from "src/components/Radio/Radio";
 
 import { RadioGroup } from "./RadioGroup";
 
-import type { IRadioGroupProps } from "./type";
+import type { IRadioGroupProps } from "./types";
 import type { Story } from "@ladle/react";
 
 export default {

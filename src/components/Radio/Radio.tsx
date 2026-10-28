@@ -1,6 +1,8 @@
-import { forwardRef, useId } from "react";
+import { forwardRef, useContext, useId, type ChangeEvent } from "react";
 
 import { cx } from "src/utils/utils";
+
+import { RadioGroupContext } from "../RadioGroup/RadioGroupProvider/context";
 
 import type { IRadioProps } from "./types";
 
@@ -17,17 +19,32 @@ export const Radio = forwardRef<HTMLInputElement, IRadioProps>(
       required,
       id,
       name,
+      value,
+      checked,
+      onChange,
       "aria-describedby": ariaDescribedBy,
       ...props
     },
     ref,
   ) => {
+    const group = useContext(RadioGroupContext);
+
     const autoId = useId();
     const radioId = id ?? autoId;
 
     const hasError = Boolean(error);
     const messageId = hasError ? `${radioId}-message` : undefined;
     const describeBy = [ariaDescribedBy, messageId].filter(Boolean).join(" ") || undefined;
+
+    const inputName = group ? group.name : name;
+    const isChecked = group ? group.value === String(value) : checked;
+    const isDisabled = group?.disabled || disabled;
+    const isRequired = group ? group.required : required;
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+      onChange?.(event);
+      group?.onChange(event.target.value);
+    };
 
     return (
       <div
@@ -43,16 +60,19 @@ export const Radio = forwardRef<HTMLInputElement, IRadioProps>(
           <input
             ref={ref}
             id={radioId}
-            name={name}
+            name={inputName}
             type="radio"
+            value={value}
+            checked={isChecked}
+            onChange={handleChange}
             className={styles.input}
-            disabled={disabled}
-            required={required}
+            disabled={isDisabled}
+            required={isRequired}
             aria-describedby={describeBy}
             {...props}
           />
           {label}
-          {required && (
+          {required && !group && (
             <span className={styles.required} aria-hidden="true">
               {" *"}
             </span>

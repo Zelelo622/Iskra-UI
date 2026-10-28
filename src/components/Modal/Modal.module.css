@@ -9,9 +9,9 @@
   max-height: calc(100dvh - 32px);
   padding: 0;
   border: none;
-  border-radius: var(--uikit-radius-lg, 12px);
-  background: var(--uikit-color-surface, #fff);
-  color: var(--uikit-color-text, #111827);
+  border-radius: var(--uikit-radius-lg);
+  background: var(--uikit-color-surface);
+  color: var(--uikit-color-text);
   box-shadow: 0 20px 50px rgb(0 0 0 / 0.2);
 }
 
@@ -22,7 +22,7 @@
 }
 
 .modal::backdrop {
-  background: var(--uikit-color-overlay, rgb(0 0 0 / 0.5));
+  background: var(--uikit-color-overlay);
 }
 .modal[open]::backdrop {
   animation: fade-in 0.2s ease-out;
@@ -51,7 +51,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 16px 20px;
-  border-bottom: 1px solid var(--uikit-color-border, #e5e7eb);
+  border-bottom: 1px solid var(--uikit-color-border);
 }
 
 .title {
@@ -76,7 +76,7 @@
   cursor: pointer;
 }
 .close:hover {
-  background: var(--uikit-color-hover, rgb(0 0 0 / 0.06));
+  background: var(--uikit-color-surface-hover);
 }
 
 .body {

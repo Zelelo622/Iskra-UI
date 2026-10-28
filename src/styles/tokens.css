@@ -39,6 +39,7 @@
   --uikit-color-surface-hover: var(--uikit-gray-100);
   --uikit-color-surface-active: var(--uikit-gray-200);
   --uikit-color-surface-inverse: var(--uikit-gray-800);
+  --uikit-color-overlay: rgb(0 0 0 / 0.5);
 
   /* --- Text --- */
   --uikit-color-text: var(--uikit-gray-900);
@@ -77,6 +78,9 @@
   --uikit-color-ring-accent: rgba(37, 99, 235, 0.25);
   --uikit-color-ring-error: rgba(179, 38, 30, 0.25);
 
+  /* --- Shadows --- */
+  --uikit-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+
   /* ============================================
      LAYER 3: COMPONENT-SPECIFIC
      ============================================ */
@@ -85,6 +89,7 @@
   /* --- Radius --- */
   --uikit-radius-sm: 4px;
   --uikit-radius-md: 8px;
+  --uikit-radius-lg: 12px;
 
   /* --- Typography --- */
   --uikit-font-size-2xs: 11px;
@@ -120,6 +125,7 @@
   --uikit-color-surface-hover: var(--uikit-gray-700);
   --uikit-color-surface-active: var(--uikit-gray-600);
   --uikit-color-surface-inverse: var(--uikit-gray-100);
+  --uikit-color-overlay: rgb(0 0 0 / 0.7);
 
   /* --- Text --- */
   --uikit-color-text: var(--uikit-gray-100);
@@ -157,6 +163,9 @@
   /* --- Focus rings --- */
   --uikit-color-ring-accent: rgba(59, 130, 246, 0.35);
   --uikit-color-ring-error: rgba(239, 68, 68, 0.35);
+
+  /* --- Shadows --- */
+  --uikit-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
 
   /* --- Skeleton --- */
   --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.08);

@@ -91,3 +91,5 @@ export const Tabs = ({ items, defaultValue, onChange, className }: ITabsProps): 
     </div>
   );
 };
+
+Tabs.displayName = "Tabs";

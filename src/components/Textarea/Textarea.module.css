@@ -1,0 +1,25 @@
+@import "../../styles/tokens.css";
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: var(--field-height);
+  padding: 8px 12px;
+  color: var(--uikit-color-text);
+  font-family: inherit;
+  line-height: 1.5;
+  outline: none;
+  resize: vertical;
+}
+
+.textarea::placeholder {
+  color: var(--uikit-color-text-placeholder);
+}
+
+.textarea:disabled {
+  cursor: not-allowed;
+}
+
+.resizeNone {
+  resize: none;
+}

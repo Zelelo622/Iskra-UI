@@ -1,78 +1,11 @@
 @import "../../styles/tokens.css";
 
-.sm {
-  --input-height: var(--uikit-input-height-sm);
-  --input-font-size: var(--uikit-font-size-xs);
-  --input-label-size: var(--uikit-font-size-xs);
-  --input-message-size: var(--uikit-font-size-2xs);
-}
-.md {
-  --input-height: var(--uikit-input-height-md);
-  --input-font-size: var(--uikit-font-size-sm);
-  --input-label-size: var(--uikit-font-size-sm);
-  --input-message-size: var(--uikit-font-size-xs);
-}
-.lg {
-  --input-height: var(--uikit-input-height-lg);
-  --input-font-size: var(--uikit-font-size-md);
-  --input-label-size: var(--uikit-font-size-md);
-  --input-message-size: var(--uikit-font-size-sm);
-}
-
-.root {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.label {
-  font-size: var(--uikit-font-size-sm);
-  font-weight: var(--uikit-font-weight-medium);
-  color: var(--uikit-color-text);
-  font-size: var(--input-label-size);
-}
-
-.required {
-  color: var(--uikit-color-danger);
-}
-
-.field {
-  height: var(--input-height);
-  font-size: var(--input-font-size);
-  box-sizing: border-box;
+.box {
   display: flex;
   align-items: center;
   gap: 8px;
+  height: var(--field-height);
   padding: 0 12px;
-  border: 1px solid var(--uikit-color-border);
-  border-radius: var(--uikit-radius-md);
-  background: var(--uikit-color-surface);
-  transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.field:hover:not(.disabled) {
-  border-color: var(--uikit-color-border-hover);
-}
-
-.field:focus-within {
-  border-color: var(--uikit-color-border-focus);
-  box-shadow: 0 0 0 3px var(--uikit-color-ring-accent);
-}
-
-.invalid,
-.invalid:hover:not(.disabled) {
-  border-color: var(--uikit-color-danger);
-}
-
-.invalid:focus-within {
-  box-shadow: 0 0 0 3px var(--uikit-color-ring-error);
-}
-
-.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 .input {
@@ -100,13 +33,4 @@
   display: inline-flex;
   flex: none;
   color: var(--uikit-color-text-muted);
-}
-
-.message {
-  margin: 0;
-  font-size: var(--input-message-size);
-  color: var(--uikit-color-text-muted);
-}
-.error {
-  color: var(--uikit-color-danger);
 }

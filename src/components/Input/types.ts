@@ -1,14 +1,9 @@
 import type { InputHTMLAttributes, ReactNode } from "react";
 
-export interface IInputProps extends Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "size" | "prefix"
-> {
-  size?: "sm" | "md" | "lg";
-  label?: ReactNode;
-  hint?: ReactNode;
-  error?: ReactNode;
+import type { IFieldProps } from "src/components/FormField";
+
+export interface IInputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "prefix">, IFieldProps {
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-  className?: string;
 }

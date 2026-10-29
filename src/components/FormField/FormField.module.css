@@ -1,0 +1,82 @@
+@import "../../styles/tokens.css";
+
+.sm {
+  --field-height: var(--uikit-input-height-sm);
+  --field-font-size: var(--uikit-font-size-xs);
+  --field-label-size: var(--uikit-font-size-xs);
+  --field-message-size: var(--uikit-font-size-2xs);
+}
+
+.md {
+  --field-height: var(--uikit-input-height-md);
+  --field-font-size: var(--uikit-font-size-sm);
+  --field-label-size: var(--uikit-font-size-sm);
+  --field-message-size: var(--uikit-font-size-xs);
+}
+
+.lg {
+  --field-height: var(--uikit-input-height-lg);
+  --field-font-size: var(--uikit-font-size-md);
+  --field-label-size: var(--uikit-font-size-md);
+  --field-message-size: var(--uikit-font-size-sm);
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: var(--field-label-size);
+  font-weight: var(--uikit-font-weight-medium);
+  color: var(--uikit-color-text);
+}
+
+.required {
+  color: var(--uikit-color-danger);
+}
+
+.box {
+  box-sizing: border-box;
+  font-size: var(--field-font-size);
+  border: 1px solid var(--uikit-color-border);
+  border-radius: var(--uikit-radius-md);
+  background: var(--uikit-color-surface);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.box:hover:not(.disabled) {
+  border-color: var(--uikit-color-border-hover);
+}
+
+.box:focus-within {
+  border-color: var(--uikit-color-border-focus);
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-accent);
+}
+
+.invalid,
+.invalid:hover:not(.disabled) {
+  border-color: var(--uikit-color-danger);
+}
+
+.invalid:focus-within {
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-error);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  margin: 0;
+  font-size: var(--field-message-size);
+  color: var(--uikit-color-text-muted);
+}
+
+.error {
+  color: var(--uikit-color-danger);
+}

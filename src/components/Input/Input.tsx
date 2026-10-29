@@ -1,5 +1,6 @@
-import { forwardRef, useId } from "react";
+import { forwardRef } from "react";
 
+import { FormField } from "src/components/FormField";
 import { cx } from "src/utils/utils";
 
 import type { IInputProps } from "./types";
@@ -23,49 +24,34 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
       ...props
     },
     ref,
-  ) => {
-    const autoId = useId();
-    const inputId = id ?? autoId;
-
-    const hasError = Boolean(error);
-    const message = hasError ? error : hint;
-    const messageId = message ? `${inputId}-message` : undefined;
-    const describeBy = [ariaDescribedBy, messageId].filter(Boolean).join(" ") || undefined;
-
-    return (
-      <div className={cx(styles.root, styles[size], className)}>
-        {label && (
-          <label htmlFor={inputId} className={styles.label}>
-            {label}{" "}
-            {required && (
-              <span className={styles.required} aria-hidden="true">
-                {" *"}
-              </span>
-            )}
-          </label>
-        )}
-        <div className={cx(styles.field, hasError && styles.invalid, disabled && styles.disabled)}>
+  ) => (
+    <FormField
+      id={id}
+      size={size}
+      label={label}
+      hint={hint}
+      error={error}
+      required={required}
+      disabled={disabled}
+      className={className}
+      aria-describedby={ariaDescribedBy}
+    >
+      {({ controlProps, boxClassName }) => (
+        <div className={cx(boxClassName, styles.box)}>
           {startIcon && <span className={styles.icon}>{startIcon}</span>}
           <input
             ref={ref}
-            id={inputId}
+            {...controlProps}
             required={required}
             disabled={disabled}
-            aria-invalid={hasError || undefined}
-            aria-describedby={describeBy}
             className={styles.input}
             {...props}
           />
           {endIcon && <span className={styles.icon}>{endIcon}</span>}
         </div>
-        {message && (
-          <p id={messageId} className={cx(styles.message, hasError && styles.error)}>
-            {message}
-          </p>
-        )}
-      </div>
-    );
-  },
+      )}
+    </FormField>
+  ),
 );
 
 Input.displayName = "Input";

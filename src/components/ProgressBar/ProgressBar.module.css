@@ -1,0 +1,77 @@
+@import "../../styles/tokens.css";
+
+.progress {
+  --progress-color: var(--uikit-color-accent);
+
+  position: relative;
+  width: 100%;
+  height: var(--uikit-progress-height-md);
+  overflow: hidden;
+  border-radius: 9999px;
+  background: var(--uikit-color-surface-active);
+}
+
+.sm {
+  height: var(--uikit-progress-height-sm);
+}
+
+.md {
+  height: var(--uikit-progress-height-md);
+}
+
+.lg {
+  height: var(--uikit-progress-height-lg);
+}
+
+.success {
+  --progress-color: var(--uikit-color-success);
+}
+
+.danger {
+  --progress-color: var(--uikit-color-danger);
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--progress-color);
+  transform: translateX(var(--progress-offset, -100%));
+  transition: transform 0.3s ease;
+}
+
+.indeterminate .fill {
+  width: 40%;
+  transform: none;
+  animation: indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    transition: none;
+  }
+
+  .indeterminate .fill {
+    animation-duration: 3s;
+  }
+}
+
+@media (forced-colors: active) {
+  .progress {
+    border: 1px solid CanvasText;
+  }
+
+  .fill {
+    background: Highlight;
+  }
+}

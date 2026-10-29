@@ -46,6 +46,7 @@ function App() {
 - **Badge** - индикаторы.
 - **Button** - основная кнопка.
 - **Checkbox** - чекбокс, в том числе с состоянием "частично выбрано".
+- **Divider** - разделитель.
 - **Input** - поле ввода.
 - **Modal** - модальное окно на нативном `<dialog>`.
 - **Radio** - радиокнопка.
@@ -134,7 +135,7 @@ npm install    # зависимости + git-хуки (ставятся авт�
 
 ### Области
 
-- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `input`, `modal`, `radio`, `radiogroup`, `skeleton`, `spinner`, `switch`, `tabs`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
+- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `divider`, `input`, `modal`, `radio`, `radiogroup`, `skeleton`, `spinner`, `switch`, `tabs`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
 - `tokens` - CSS-переменные и дизайн-токены.
 - `utils` - общие утилиты (`src/utils`).
 - `deps` - зависимости.

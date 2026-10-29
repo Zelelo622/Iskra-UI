@@ -116,6 +116,10 @@
   --uikit-input-height-sm: 32px;
   --uikit-input-height-md: 40px;
   --uikit-input-height-lg: 48px;
+
+  --uikit-progress-height-sm: 4px;
+  --uikit-progress-height-md: 8px;
+  --uikit-progress-height-lg: 12px;
 }
 
 [data-theme="dark"] {

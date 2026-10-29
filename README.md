@@ -49,6 +49,7 @@ function App() {
 - **Divider** - разделитель.
 - **Input** - поле ввода.
 - **Modal** - модальное окно на нативном `<dialog>`.
+- **ProgressBar** - индикатор прогресса, в том числе бесконечный.
 - **Radio** - радиокнопка.
 - **RadioGroup** - группа радиокнопок.
 - **Skeleton** - заглушки для загрузки контента.
@@ -135,7 +136,7 @@ npm install    # зависимости + git-хуки (ставятся авт�
 
 ### Области
 
-- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `divider`, `input`, `modal`, `radio`, `radiogroup`, `skeleton`, `spinner`, `switch`, `tabs`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
+- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `divider`, `input`, `modal`, `progressbar`, `radio`, `radiogroup`, `skeleton`, `spinner`, `switch`, `tabs`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
 - `tokens` - CSS-переменные и дизайн-токены.
 - `utils` - общие утилиты (`src/utils`).
 - `deps` - зависимости.

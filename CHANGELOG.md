@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.2.0...v0.3.0) (2026-10-30)
+
+
+### Новые возможности
+
+* **checkboxgroup:** добавлен компонент CheckboxGroup ([#18](https://github.com/Zelelo622/Iskra-UI/issues/18)) ([1a58718](https://github.com/Zelelo622/Iskra-UI/commit/1a5871852ca20775b6d59acb218f7c2e956ee5b7))
+* **select:** добавлен компонент Select ([#16](https://github.com/Zelelo622/Iskra-UI/issues/16)) ([b377e74](https://github.com/Zelelo622/Iskra-UI/commit/b377e74b3278aaa2ae68720e1983c40712058ca9))
+
 ## [0.2.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.1.1...v0.2.0) (2026-10-29)
 
 

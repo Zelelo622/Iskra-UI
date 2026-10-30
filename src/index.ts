@@ -7,6 +7,7 @@ export * from "./components/CheckboxGroup";
 export * from "./components/Divider";
 export * from "./components/Input";
 export * from "./components/Modal";
+export * from "./components/Pagination";
 export * from "./components/ProgressBar";
 export * from "./components/Radio";
 export * from "./components/RadioGroup";

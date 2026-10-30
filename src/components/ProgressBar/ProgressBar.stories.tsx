@@ -2,6 +2,10 @@ import { useEffect, useId, useState, type ReactElement } from "react";
 
 import { ProgressBar } from "./ProgressBar";
 
+export default {
+  title: "ProgressBar",
+};
+
 export const Default = (): ReactElement => (
   <div style={{ width: 400 }}>
     <ProgressBar value={40} aria-label="Загрузка файла" />

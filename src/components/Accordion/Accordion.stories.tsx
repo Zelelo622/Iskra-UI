@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Button } from "../Button";
+
 import { Accordion } from "./Accordion";
 import { AccordionContent } from "./components/AccordionContent";
 import { AccordionItem } from "./components/AccordionItem";
@@ -176,9 +178,9 @@ export const Controlled: Story = () => {
       </Accordion>
 
       <div style={{ display: "flex", gap: "0.5rem" }}>
-        <button onClick={() => setValue(["item-1", "item-2"])}>Открыть 1 и 2</button>
-        <button onClick={() => setValue(["item-3"])}>Открыть только 3</button>
-        <button onClick={() => setValue([])}>Закрыть все</button>
+        <Button onClick={() => setValue(["item-1", "item-2"])}>Открыть 1 и 2</Button>
+        <Button onClick={() => setValue(["item-3"])}>Открыть только 3</Button>
+        <Button onClick={() => setValue([])}>Закрыть все</Button>
       </div>
     </div>
   );

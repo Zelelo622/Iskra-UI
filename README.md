@@ -48,6 +48,7 @@ function App() {
 - **Checkbox** - чекбокс, в том числе с состоянием "частично выбрано".
 - **CheckboxGroup** - группа чекбоксов с общим заголовком и ошибкой.
 - **Divider** - разделитель.
+- **Drawer** - боковая панель.
 - **Input** - поле ввода.
 - **Modal** - модальное окно на нативном `<dialog>`.
 - **Pagination** - пагинация.
@@ -140,7 +141,7 @@ npm install    # зависимости + git-хуки (ставятся авт�
 
 ### Области
 
-- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `checkboxgroup`, `divider`, `input`, `modal`, `pagination`, `progressbar`, `radio`, `radiogroup`, `select`, `skeleton`, `spinner`, `switch`, `tabs`, `textarea`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
+- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `checkboxgroup`, `divider`, `drawer`, `input`, `modal`, `pagination`, `progressbar`, `radio`, `radiogroup`, `select`, `skeleton`, `spinner`, `switch`, `tabs`, `textarea`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
 - `tokens` - CSS-переменные и дизайн-токены.
 - `utils` - общие утилиты (`src/utils`).
 - `deps` - зависимости.

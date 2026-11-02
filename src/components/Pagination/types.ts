@@ -7,12 +7,12 @@ export interface IPaginationLabels {
 }
 
 export interface IPaginationProps extends Omit<HTMLAttributes<HTMLElement>, "onChange"> {
-  totalPage: number;
+  totalPages: number;
   page?: number;
   defaultPage?: number;
   onChange?: (page: number) => void;
   siblingCount?: number;
-  boundaryCound?: number;
+  boundaryCount?: number;
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   labels?: IPaginationLabels;

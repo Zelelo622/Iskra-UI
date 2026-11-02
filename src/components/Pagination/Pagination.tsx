@@ -9,7 +9,7 @@ import type { IPaginationProps } from "./types";
 import styles from "./Pagination.module.css";
 
 const DEFAULT_LABELS = {
-  previouse: "Previous page",
+  previous: "Previous page",
   next: "Next page",
   page: (page: number) => `Page ${page}`,
 };
@@ -57,9 +57,70 @@ export const Pagination = ({
   const isLast = currentPage === totalPages;
   const text = { ...DEFAULT_LABELS, ...labels };
 
-  const goTo = (target: number) => {};
+  const goTo = (target: number) => {
+    if (disabled || target === currentPage || target < 1 || target > totalPages) {
+      return;
+    }
+    if (!isControlled) {
+      setUncontrolledPage(target);
+    }
+    onChange?.(target);
+  };
 
-  return <div />;
+  const items = getPaginationRange(currentPage, totalPages, siblingCount, boundaryCount);
+
+  return (
+    <nav aria-label={ariaLabel} className={cx(styles.root, styles[size], className)} {...props}>
+      <ul className={styles.list}>
+        <li>
+          <button
+            type="button"
+            className={styles.item}
+            onClick={() => goTo(currentPage - 1)}
+            disabled={disabled}
+            aria-disabled={isFirst || undefined}
+            aria-label={text.previous}
+          >
+            <Chevron direction="left" />
+          </button>
+        </li>
+
+        {items.map((item) =>
+          typeof item === "number" ? (
+            <li key={item}>
+              <button
+                type="button"
+                className={styles.item}
+                onClick={() => goTo(item)}
+                disabled={disabled}
+                aria-current={item === currentPage ? "page" : undefined}
+                aria-label={text.page(item)}
+              >
+                {item}
+              </button>
+            </li>
+          ) : (
+            <li key={item} className={styles.ellipsis} aria-hidden="true">
+              …
+            </li>
+          ),
+        )}
+
+        <li>
+          <button
+            type="button"
+            className={styles.item}
+            onClick={() => goTo(currentPage + 1)}
+            disabled={disabled}
+            aria-disabled={isLast || undefined}
+            aria-label={text.next}
+          >
+            <Chevron direction="right" />
+          </button>
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
 Pagination.displayName = "Pagination";

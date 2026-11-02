@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.3.0...v0.4.0) (2026-11-02)
+
+
+### Новые возможности
+
+* **drawer:** добавлен компонент Drawer ([#21](https://github.com/Zelelo622/Iskra-UI/issues/21)) ([b3e6e0b](https://github.com/Zelelo622/Iskra-UI/commit/b3e6e0b4a7e15126305c2868d09bfb87a3591799))
+* **pagination:** добавлен компонент Pagination ([#19](https://github.com/Zelelo622/Iskra-UI/issues/19)) ([c64e6ce](https://github.com/Zelelo622/Iskra-UI/commit/c64e6ce10d16f63df3aff0af9e882b68211d0924))
+
 ## [0.3.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.2.0...v0.3.0) (2026-10-30)
 
 

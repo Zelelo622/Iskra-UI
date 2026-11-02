@@ -1,0 +1,98 @@
+@import "../../styles/tokens.css";
+
+.sm {
+  --pagination-size: var(--uikit-input-height-sm);
+  --pagination-font-size: var(--uikit-font-size-xs);
+}
+
+.md {
+  --pagination-size: var(--uikit-input-height-md);
+  --pagination-font-size: var(--uikit-font-size-sm);
+}
+
+.lg {
+  --pagination-size: var(--uikit-input-height-lg);
+  --pagination-font-size: var(--uikit-font-size-md);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--pagination-size);
+  height: var(--pagination-size);
+  padding: 0 8px;
+  border: none;
+  border-radius: var(--uikit-radius-md);
+  background: transparent;
+  color: var(--uikit-color-text);
+  font: inherit;
+  font-size: var(--pagination-font-size);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.item:hover:not(:disabled, [aria-disabled="true"], [aria-current="page"]) {
+  background: var(--uikit-color-surface-hover);
+}
+
+.item:active:not(:disabled, [aria-disabled="true"], [aria-current="page"]) {
+  background: var(--uikit-color-surface-active);
+}
+
+.item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--uikit-color-ring-accent);
+}
+
+.item[aria-current="page"] {
+  background: var(--uikit-color-accent);
+  color: var(--uikit-color-text-on-accent);
+  font-weight: var(--uikit-font-weight-medium);
+  cursor: default;
+}
+
+.item:disabled,
+.item[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ellipsis {
+  min-width: var(--pagination-size);
+  color: var(--uikit-color-text-muted);
+  font-size: var(--pagination-font-size);
+  text-align: center;
+  user-select: none;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .item[aria-current="page"] {
+    border: 2px solid CanvasText;
+  }
+}

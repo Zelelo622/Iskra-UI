@@ -1,0 +1,192 @@
+@import "../../styles/tokens.css";
+
+:global(body):has(.drawer:modal) {
+  overflow: hidden;
+}
+
+.sm {
+  --drawer-width: 320px;
+  --drawer-height: 30dvh;
+}
+
+.md {
+  --drawer-width: 400px;
+  --drawer-height: 50dvh;
+}
+
+.lg {
+  --drawer-width: 560px;
+  --drawer-height: 80dvh;
+}
+
+.left,
+.right {
+  width: min(var(--drawer-size, var(--drawer-width)), 100vw - 48px);
+  height: 100dvh;
+}
+
+.top,
+.bottom {
+  width: 100%;
+  height: min(var(--drawer-size, var(--drawer-height)), 100dvh - 48px);
+}
+
+.right {
+  inset: 0 0 0 auto;
+}
+
+.left {
+  inset: 0 auto 0 0;
+}
+
+.top {
+  inset: 0 0 auto;
+  border-radius: 0 0 var(--uikit-radius-lg) var(--uikit-radius-lg);
+}
+
+.bottom {
+  inset: auto 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-radius: var(--uikit-radius-lg) var(--uikit-radius-lg) 0 0;
+}
+
+.right[open] {
+  animation: slide-from-right 0.25s ease-out;
+}
+
+.left[open] {
+  animation: slide-from-left 0.25s ease-out;
+}
+
+.top[open] {
+  animation: slide-from-top 0.25s ease-out;
+}
+
+.bottom[open] {
+  animation: slide-from-bottom 0.25s ease-out;
+}
+
+.drawer {
+  position: fixed;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  max-width: none;
+  max-height: none;
+  background: var(--uikit-color-surface);
+  color: var(--uikit-color-text);
+  box-shadow: 0 0 40px rgb(0 0 0 / 0.2);
+}
+
+.drawer[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer::backdrop {
+  background: var(--uikit-color-overlay);
+}
+
+.drawer[open]::backdrop {
+  animation: fade-in 0.25s ease-out;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--uikit-color-border);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--uikit-font-size-lg);
+  font-weight: var(--uikit-font-weight-semibold);
+}
+
+.close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: -4px -8px -4px auto;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close:hover {
+  background: var(--uikit-color-surface-hover);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--uikit-color-accent-focus);
+  outline-offset: 2px;
+}
+
+.body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--uikit-color-border);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-from-top {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer[open],
+  .drawer[open]::backdrop {
+    animation: none;
+  }
+}

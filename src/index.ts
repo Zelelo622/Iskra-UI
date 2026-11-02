@@ -5,6 +5,7 @@ export * from "./components/Button";
 export * from "./components/Checkbox";
 export * from "./components/CheckboxGroup";
 export * from "./components/Divider";
+export * from "./components/Drawer";
 export * from "./components/Input";
 export * from "./components/Modal";
 export * from "./components/Pagination";

@@ -1,23 +1,16 @@
 # Iskra UI
 
-Современная, доступная (a11y) и легковесная библиотека React-компонентов, написанная на TypeScript.
+Доступная (a11y) и легковесная библиотека React-компонентов на TypeScript.
+
+[Демо компонентов](https://zelelo622.github.io/Iskra-UI/) · [npm](https://www.npmjs.com/package/@zelelo/iskra-ui) · [История изменений](https://github.com/Zelelo622/Iskra-UI/blob/main/CHANGELOG.md)
 
 ## Установка
 
 ```bash
 npm install @zelelo/iskra-ui
-# или
-yarn add @zelelo/iskra-ui
-# или
-pnpm add @zelelo/iskra-ui
 ```
 
-**Peer Dependencies:**
-Убедитесь, что в вашем проекте установлен React версии 18 или выше:
-
-```bash
-npm install react react-dom
-```
+Нужен React 18 или новее (`react` и `react-dom` - peer dependencies).
 
 ## Использование
 
@@ -29,188 +22,63 @@ import "@zelelo/iskra-ui/styles.css";
 
 function App() {
   return (
-    <div>
-      <Input placeholder="Введите имя..." />
-      <Button variant="primary" size="md">
-        Отправить
-      </Button>
-    </div>
+    <form>
+      <Input label="Имя" placeholder="Введите имя..." />
+      <Button type="submit">Отправить</Button>
+    </form>
   );
 }
 ```
 
-## Доступные компоненты
+Типы TypeScript входят в пакет. Пропсы каждого компонента экспортируются вместе с ним:
 
-- **Accordion** - гармошка для скрытия/показа контента.
-- **Alert** - цветные блоки для уведомлений.
-- **Badge** - индикаторы.
-- **Button** - основная кнопка.
-- **Checkbox** - чекбокс, в том числе с состоянием "частично выбрано".
-- **CheckboxGroup** - группа чекбоксов с общим заголовком и ошибкой.
-- **Divider** - разделитель.
-- **Drawer** - боковая панель.
-- **Input** - поле ввода.
-- **Modal** - модальное окно на нативном `<dialog>`.
-- **Pagination** - пагинация.
-- **ProgressBar** - индикатор прогресса, в том числе бесконечный.
-- **Radio** - радиокнопка.
-- **RadioGroup** - группа радиокнопок.
-- **Select** - выпадающий список на нативном `<select>`.
-- **Skeleton** - заглушки для загрузки контента.
-- **Spinner** - индикатор загрузки.
-- **Switch** - переключатель.
-- **Tabs** - вкладки с навигацией с клавиатуры.
-- **Textarea** - многострочное поле ввода.
-- **Toast** - всплывающие уведомления.
-- **Tooltip** - всплывающие подсказки при наведении и фокусе.
-
-История изменений - в [CHANGELOG.md](https://github.com/Zelelo622/Iskra-UI/blob/main/CHANGELOG.md) (появится после первого релиза).
-
----
-
-## Разработка
-
-### Окружение
-
-Версия Node.js зафиксирована в `.nvmrc`:
-
-```bash
-nvm use        # переключиться на нужную версию Node
-npm install    # зависимости + git-хуки (ставятся автоматически через lefthook)
+```ts
+import type { IButtonProps } from "@zelelo/iskra-ui";
 ```
 
-После `npm install` в `.git/hooks` должны появиться `pre-commit`, `commit-msg` и `pre-push`. Если их нет - выполните `npx lefthook install`.
+## Компоненты
 
-Все файлы в репозитории хранятся с переводами строк LF (см. `.gitattributes`), поэтому на Windows не нужно ничего настраивать в git.
+Все компоненты с примерами - в [демо](https://zelelo622.github.io/Iskra-UI/).
 
-### Команды
+| Группа         | Компоненты                                                                          |
+| :------------- | :---------------------------------------------------------------------------------- |
+| Формы          | Button, Input, Textarea, Select, Checkbox, CheckboxGroup, Radio, RadioGroup, Switch |
+| Навигация      | Tabs, Pagination, Accordion                                                         |
+| Оверлеи        | Modal, Drawer, Tooltip, Toast                                                       |
+| Обратная связь | Alert, Badge, ProgressBar, Spinner, Skeleton                                        |
+| Разметка       | Divider                                                                             |
 
-| Команда                | Что делает                                                      |
-| :--------------------- | :-------------------------------------------------------------- |
-| `npm run dev`          | Ladle - витрина компонентов для разработки                      |
-| `npm run build`        | Сборка библиотеки в `dist` (ESM + CJS + типы + `index.css`)     |
-| `npm run lint`         | oxlint + ESLint (порядок и стиль импортов)                      |
-| `npm run lint:fix`     | То же с автоисправлением                                        |
-| `npm run format`       | Форматирование oxfmt                                            |
-| `npm run format:check` | Проверка форматирования без изменений                           |
-| `npm run typecheck`    | Проверка типов TypeScript                                       |
-| `npm run check`        | Всё сразу: lint, format:check, typecheck, build                 |
-| `npm run check:fix`    | Исправить всё, что исправляется автоматически, и прогнать check |
+## Тёмная тема
 
-### Git-хуки (lefthook)
+Тёмная тема включается атрибутом `data-theme="dark"` на любом родительском элементе, обычно на `<html>`:
 
-- **pre-commit** - oxlint и ESLint по изменённым файлам; oxfmt сам форматирует файлы и добавляет исправления в коммит.
-- **commit-msg** - commitlint проверяет сообщение коммита (правила ниже).
-- **pre-push** - проверка типов и сборка.
-
----
-
-## Коммиты и CHANGELOG
-
-`CHANGELOG.md`, номер версии и релизы генерируются **автоматически** из истории коммитов в `main` с помощью [release-please](https://github.com/googleapis/release-please). Поэтому сообщение коммита - это не формальность: тип решает, попадёт ли изменение в changelog и какая выйдет версия, а описание пользователи прочитают в списке изменений.
-
-### Формат
-
-```
-<тип>(<область>): <описание>
+```html
+<html data-theme="dark"></html>
 ```
 
-- **тип** - обязательный, из таблицы ниже;
-- **область** - необязательная, но для изменений в компоненте указывайте её;
-- **описание** - по-русски, с маленькой буквы, без точки в конце, в прошедшем времени или как результат: «добавлено…», «исправлено…».
+Переключать тему - значит менять этот атрибут, например `document.documentElement.dataset.theme = "dark"`.
 
-Для ломающих изменений после типа ставится `!` (см. ниже).
+## Настройка внешнего вида
 
-### Типы
+Цвета, радиусы, размеры шрифтов и другие значения заданы CSS-переменными с префиксом `--uikit-`. Чтобы изменить их, переопределите переменные в своём CSS, подключённом **после** `styles.css`:
 
-| Тип        | Когда использовать                                           | В CHANGELOG          | Версия |
-| :--------- | :----------------------------------------------------------- | :------------------- | :----- |
-| `feat`     | Новый компонент, проп, вариант, возможность для пользователя | «Новые возможности»  | minor  |
-| `fix`      | Исправление бага, который видит пользователь библиотеки      | «Исправления»        | patch  |
-| `perf`     | Ускорение без изменения поведения                            | «Производительность» | patch  |
-| `revert`   | Откат предыдущего коммита                                    | «Откаты»             | patch  |
-| `docs`     | README, JSDoc, сторис                                        | нет                  | -      |
-| `style`    | Форматирование, без изменения логики                         | нет                  | -      |
-| `refactor` | Переписан код без изменения поведения                        | нет                  | -      |
-| `test`     | Тесты                                                        | нет                  | -      |
-| `build`    | Сборка, tsup, `package.json`, зависимости                    | нет                  | -      |
-| `ci`       | GitHub Actions                                               | нет                  | -      |
-| `chore`    | Прочее: конфиги линтеров, хуки, рутина                       | нет                  | -      |
+```css
+:root {
+  --uikit-color-accent: #7c3aed;
+  --uikit-color-accent-hover: #6d28d9;
+  --uikit-radius-md: 4px;
+}
 
-Если с последнего релиза в `main` были только коммиты без версии (`docs`, `chore` и т. п.), релиз не создаётся.
-
-### Области
-
-- Компоненты - имя папки в нижнем регистре: `accordion`, `alert`, `badge`, `button`, `checkbox`, `checkboxgroup`, `divider`, `drawer`, `input`, `modal`, `pagination`, `progressbar`, `radio`, `radiogroup`, `select`, `skeleton`, `spinner`, `switch`, `tabs`, `textarea`, `toast`, `tooltip`. Новый компонент становится допустимой областью автоматически, как только появляется его папка в `src/components`.
-- `tokens` - CSS-переменные и дизайн-токены.
-- `utils` - общие утилиты (`src/utils`).
-- `deps` - зависимости.
-- `build`, `lint`, `ci`, `docs`, `release` - инфраструктура проекта.
-
-Если указать область, которой нет в этом списке, commitlint отклонит коммит.
-
-### Ломающие изменения
-
-Если изменение требует правок в коде у пользователей библиотеки (переименован или удалён проп, изменилось поведение по умолчанию), поставьте `!` и опишите, что делать, в теле коммита:
-
-```
-feat(button)!: проп variant="outline" переименован в "secondary"
-
-BREAKING CHANGE: замените variant="outline" на variant="secondary".
+[data-theme="dark"] {
+  --uikit-color-accent: #a78bfa;
+}
 ```
 
-Пока версия ниже 1.0.0, ломающее изменение повышает minor (`0.3.0 → 0.4.0`), после 1.0.0 - major (`1.4.0 → 2.0.0`).
+Полный список переменных - в [tokens.css](https://github.com/Zelelo622/Iskra-UI/blob/main/src/styles/tokens.css).
 
-### Примеры
+## Участие в разработке
 
-| ✅ Хорошо                                           | ❌ Плохо                      |
-| :-------------------------------------------------- | :---------------------------- |
-| `feat(checkbox): добавлено состояние indeterminate` | `feat: чекбокс`               |
-| `fix(modal): onClose больше не вызывается дважды`   | `fix: фикс`                   |
-| `feat(tokens): добавлены токены радиусов`           | `feat(Tokens): Радиусы.`      |
-| `chore(lint): включено правило import/no-cycle`     | `feat(lint): правила линтера` |
-| `build(deps): обновлён tsup до 8.3`                 | `refactor(deps): tsup`        |
-| `docs(input): добавлены сторис для иконок`          | `feat: сторис`                |
-
-Описание - это строка, которую увидят пользователи в CHANGELOG. Пишите, **что изменилось для них**, а не что вы делали в коде.
-
----
-
-## Pull Request и релизы
-
-### Как вносить изменения
-
-1. Создайте ветку от `main`.
-2. Откройте Pull Request в `main`. **Заголовок PR должен соответствовать правилам коммитов** - при Squash and Merge именно он становится коммитом в `main` и строкой в CHANGELOG. Заголовок проверяется в CI.
-3. После прохождения проверок PR сливается через **Squash and Merge**.
-
-Ветка `main` защищена: прямой пуш запрещён, слить код можно только через PR с успешными проверками.
-
-### Как выходит релиз
-
-1. После каждого слияния в `main` release-please открывает или обновляет PR `chore: release X.Y.Z`. В нём уже посчитана новая версия, обновлены `package.json` и `CHANGELOG.md`.
-2. Когда нужно выпустить версию - слейте этот PR. Перед слиянием CHANGELOG в нём можно отредактировать вручную.
-3. После слияния автоматически создаются тег `vX.Y.Z` и GitHub Release, и пакет публикуется в npm.
-
-Версию в `package.json` и `CHANGELOG.md` **не меняйте руками** вне релизного PR - release-please ведёт их сам.
-
-### Однократная настройка репозитория
-
-- **Settings → Actions → General → Workflow permissions:** включить «Allow GitHub Actions to create and approve pull requests».
-- **Secret `NPM_TOKEN`** - npm access token с правом публикации пакета `@zelelo/iskra-ui`.
-- **Secret `RELEASE_PLEASE_TOKEN`** - fine-grained personal access token на этот репозиторий (Contents и Pull requests: Read and write). Нужен потому, что PR, созданный стандартным токеном GitHub Actions, не запускает CI, и обязательные проверки на релизном PR не пройдут. Без этого секрета release-please работает со стандартным токеном.
-
----
-
-## CI / GitHub Actions
-
-| Workflow       | Когда запускается       | Что делает                                                      |
-| :------------- | :---------------------- | :-------------------------------------------------------------- |
-| `ci.yml`       | PR и пуш в `main`       | lint, format:check, typecheck, build, сборка Ladle              |
-| `pr-title.yml` | Открытие и изменение PR | Проверяет заголовок PR правилами commitlint                     |
-| `release.yml`  | Пуш в `main`            | Ведёт релизный PR; после его слияния - тег, GitHub Release, npm |
-
----
+Как запустить проект, правила коммитов и веток - в [CONTRIBUTING.md](https://github.com/Zelelo622/Iskra-UI/blob/main/CONTRIBUTING.md).
 
 ## Лицензия
 

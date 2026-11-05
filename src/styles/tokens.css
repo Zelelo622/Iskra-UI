@@ -86,6 +86,9 @@
      ============================================ */
   --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.5);
 
+  --uikit-color-avatar-bg: var(--uikit-gray-200);
+  --uikit-color-avatar-text: var(--uikit-gray-600);
+
   /* --- Radius --- */
   --uikit-radius-sm: 4px;
   --uikit-radius-md: 8px;
@@ -120,6 +123,10 @@
   --uikit-progress-height-sm: 4px;
   --uikit-progress-height-md: 8px;
   --uikit-progress-height-lg: 12px;
+
+  --uikit-avatar-size-sm: 32px;
+  --uikit-avatar-size-md: 40px;
+  --uikit-avatar-size-lg: 48px;
 }
 
 [data-theme="dark"] {
@@ -173,4 +180,8 @@
 
   /* --- Skeleton --- */
   --uikit-color-skeleton-highlight: rgba(255, 255, 255, 0.08);
+
+  /* --- Avatar --- */
+  --uikit-color-avatar-bg: var(--uikit-gray-700);
+  --uikit-color-avatar-text: var(--uikit-gray-300);
 }

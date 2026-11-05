@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.4.0...v0.5.0) (2026-11-05)
+
+
+### Новые возможности
+
+* **avatar:** добавлен компонент Avatar ([#25](https://github.com/Zelelo622/Iskra-UI/issues/25)) ([714d328](https://github.com/Zelelo622/Iskra-UI/commit/714d328a28e27da8c5b5e5a45f4a69b76d885271))
+
 ## [0.4.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.3.0...v0.4.0) (2026-11-02)
 
 

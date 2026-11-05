@@ -1,0 +1,51 @@
+@import "../../styles/tokens.css";
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--uikit-color-avatar-bg);
+  color: var(--uikit-color-avatar-text);
+  font-weight: var(--uikit-font-weight-medium);
+  overflow: hidden;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: var(--uikit-radius-md);
+}
+
+.sm {
+  width: var(--uikit-avatar-size-sm);
+  height: var(--uikit-avatar-size-sm);
+  font-size: var(--uikit-font-size-xs);
+}
+
+.md {
+  width: var(--uikit-avatar-size-md);
+  height: var(--uikit-avatar-size-md);
+  font-size: var(--uikit-font-size-sm);
+}
+
+.lg {
+  width: var(--uikit-avatar-size-lg);
+  height: var(--uikit-avatar-size-lg);
+  font-size: var(--uikit-font-size-md);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  text-transform: uppercase;
+  line-height: 1;
+}

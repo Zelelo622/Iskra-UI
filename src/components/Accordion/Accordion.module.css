@@ -1,5 +1,3 @@
-@import "../../styles/tokens.css";
-
 .accordion {
   display: flex;
   flex-direction: column;

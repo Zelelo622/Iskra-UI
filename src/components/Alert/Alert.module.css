@@ -1,5 +1,3 @@
-@import "../../styles/tokens.css";
-
 .alert {
   display: flex;
   align-items: flex-start;

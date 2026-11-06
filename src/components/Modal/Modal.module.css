@@ -1,5 +1,3 @@
-@import "../../styles/tokens.css";
-
 :global(body):has(.modal[open]) {
   overflow: hidden;
 }
@@ -12,7 +10,7 @@
   border-radius: var(--uikit-radius-lg);
   background: var(--uikit-color-surface);
   color: var(--uikit-color-text);
-  box-shadow: 0 20px 50px rgb(0 0 0 / 0.2);
+  box-shadow: var(--uikit-shadow-lg);
 }
 
 .modal[open] {

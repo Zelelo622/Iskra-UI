@@ -1,5 +1,3 @@
-@import "../../styles/tokens.css";
-
 :global(body):has(.drawer:modal) {
   overflow: hidden;
 }
@@ -76,7 +74,7 @@
   max-height: none;
   background: var(--uikit-color-surface);
   color: var(--uikit-color-text);
-  box-shadow: 0 0 40px rgb(0 0 0 / 0.2);
+  box-shadow: 0 0 40px var(--uikit-color-shadow);
 }
 
 .drawer[open] {

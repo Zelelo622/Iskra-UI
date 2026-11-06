@@ -1,26 +1,25 @@
-@import "../../styles/tokens.css";
-
 .progress {
   --progress-color: var(--uikit-color-accent);
+  --progress-height: 8px;
 
   position: relative;
   width: 100%;
-  height: var(--uikit-progress-height-md);
+  height: var(--progress-height);
   overflow: hidden;
   border-radius: 9999px;
   background: var(--uikit-color-surface-active);
 }
 
 .sm {
-  height: var(--uikit-progress-height-sm);
+  --progress-height: 4px;
 }
 
 .md {
-  height: var(--uikit-progress-height-md);
+  --progress-height: 8px;
 }
 
 .lg {
-  height: var(--uikit-progress-height-lg);
+  --progress-height: 12px;
 }
 
 .success {

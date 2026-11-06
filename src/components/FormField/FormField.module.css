@@ -1,21 +1,19 @@
-@import "../../styles/tokens.css";
-
 .sm {
-  --field-height: var(--uikit-input-height-sm);
+  --field-height: var(--uikit-control-height-sm);
   --field-font-size: var(--uikit-font-size-xs);
   --field-label-size: var(--uikit-font-size-xs);
   --field-message-size: var(--uikit-font-size-2xs);
 }
 
 .md {
-  --field-height: var(--uikit-input-height-md);
+  --field-height: var(--uikit-control-height-md);
   --field-font-size: var(--uikit-font-size-sm);
   --field-label-size: var(--uikit-font-size-sm);
   --field-message-size: var(--uikit-font-size-xs);
 }
 
 .lg {
-  --field-height: var(--uikit-input-height-lg);
+  --field-height: var(--uikit-control-height-lg);
   --field-font-size: var(--uikit-font-size-md);
   --field-label-size: var(--uikit-font-size-md);
   --field-message-size: var(--uikit-font-size-sm);

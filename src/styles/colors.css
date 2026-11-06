@@ -1,0 +1,80 @@
+/* ============================================
+   ТЕМА
+   Без атрибута - светлая тема. data-theme ставится на любой элемент,
+   обычно на <html>, и действует на всё внутри него.
+   ============================================ */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Следовать настройке операционной системы */
+[data-theme="auto"] {
+  color-scheme: light dark;
+}
+
+/* ============================================
+   СМЫСЛОВЫЕ ЦВЕТА
+   light-dark(светлая, тёмная): браузер сам выбирает значение по color-scheme
+   элемента, на котором цвет используется. Каждый цвет обязан иметь оба значения.
+   ============================================ */
+
+:root {
+  /* --- Фоны --- */
+  --uikit-color-surface: light-dark(var(--uikit-white), var(--uikit-gray-800));
+  --uikit-color-surface-subtle: light-dark(var(--uikit-gray-100), var(--uikit-gray-700));
+  --uikit-color-surface-hover: light-dark(var(--uikit-gray-100), var(--uikit-gray-700));
+  --uikit-color-surface-active: light-dark(var(--uikit-gray-200), var(--uikit-gray-600));
+  --uikit-color-surface-inverse: light-dark(var(--uikit-gray-800), var(--uikit-gray-100));
+  --uikit-color-overlay: light-dark(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.7));
+
+  /* --- Текст --- */
+  --uikit-color-text: light-dark(var(--uikit-gray-900), var(--uikit-gray-100));
+  --uikit-color-text-muted: light-dark(var(--uikit-gray-500), var(--uikit-gray-400));
+  --uikit-color-text-subtle: light-dark(var(--uikit-gray-400), var(--uikit-gray-500));
+  --uikit-color-text-placeholder: light-dark(var(--uikit-gray-400), var(--uikit-gray-500));
+  --uikit-color-text-inverse: light-dark(var(--uikit-white), var(--uikit-gray-900));
+  /* Текст и иконки поверх акцентного и статусных цветов */
+  --uikit-color-text-on-accent: var(--uikit-white);
+
+  /* --- Границы --- */
+  --uikit-color-border: light-dark(var(--uikit-gray-300), var(--uikit-gray-600));
+  --uikit-color-border-hover: light-dark(var(--uikit-gray-400), var(--uikit-gray-500));
+  --uikit-color-border-focus: light-dark(var(--uikit-blue-700), var(--uikit-blue-400));
+
+  /* --- Акцент (главное действие) --- */
+  --uikit-color-accent: light-dark(var(--uikit-blue-600), var(--uikit-blue-500));
+  --uikit-color-accent-hover: light-dark(var(--uikit-blue-700), var(--uikit-blue-400));
+  --uikit-color-accent-focus: light-dark(var(--uikit-blue-800), var(--uikit-blue-400));
+
+  /* --- Статусы: насыщенные (бейджи, залитые элементы, текст ошибки) --- */
+  --uikit-color-danger: light-dark(var(--uikit-red-700), var(--uikit-red-500));
+  --uikit-color-success: light-dark(var(--uikit-green-700), var(--uikit-green-500));
+
+  /* --- Статусы: мягкие (Alert, Toast) --- */
+  --uikit-color-info-bg: light-dark(var(--uikit-sky-100), var(--uikit-sky-900));
+  --uikit-color-info-text: light-dark(var(--uikit-sky-900), var(--uikit-sky-100));
+  --uikit-color-success-bg: light-dark(var(--uikit-green-100), var(--uikit-green-900));
+  --uikit-color-success-text: light-dark(var(--uikit-green-900), var(--uikit-green-100));
+  --uikit-color-warning-bg: light-dark(var(--uikit-amber-100), var(--uikit-amber-900));
+  --uikit-color-warning-text: light-dark(var(--uikit-amber-900), var(--uikit-amber-100));
+  --uikit-color-error-bg: light-dark(var(--uikit-red-100), var(--uikit-red-900));
+  --uikit-color-error-text: light-dark(var(--uikit-red-900), var(--uikit-red-100));
+
+  /* --- Кольца фокуса: считаются из акцента, поэтому меняются вместе с ним --- */
+  --uikit-color-ring-accent: light-dark(
+    color-mix(in srgb, var(--uikit-color-accent) 25%, transparent),
+    color-mix(in srgb, var(--uikit-color-accent) 35%, transparent)
+  );
+  --uikit-color-ring-error: light-dark(
+    color-mix(in srgb, var(--uikit-color-danger) 25%, transparent),
+    color-mix(in srgb, var(--uikit-color-danger) 35%, transparent)
+  );
+
+  /* --- Тени: в тёмной теме плотнее, иначе их не видно на тёмном фоне --- */
+  --uikit-color-shadow: light-dark(rgb(0 0 0 / 0.2), rgb(0 0 0 / 0.6));
+}

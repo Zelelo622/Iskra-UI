@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.6.0...v0.7.0) (2026-11-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **tokens:** тёмная тема по настройке ОС и новая структура токенов ([#29](https://github.com/Zelelo622/Iskra-UI/issues/29))
+
+### Новые возможности
+
+* **tokens:** тёмная тема по настройке ОС и новая структура токенов ([#29](https://github.com/Zelelo622/Iskra-UI/issues/29)) ([fc71e5f](https://github.com/Zelelo622/Iskra-UI/commit/fc71e5ff4333c16b45b9ff48acfef8df09f2566b))
+
 ## [0.6.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.5.0...v0.6.0) (2026-11-06)
 
 

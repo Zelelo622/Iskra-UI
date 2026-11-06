@@ -44,7 +44,7 @@ import type { IButtonProps } from "@zelelo/iskra-ui";
 | :------------- | :---------------------------------------------------------------------------------- |
 | Формы          | Button, Input, Textarea, Select, Checkbox, CheckboxGroup, Radio, RadioGroup, Switch |
 | Навигация      | Tabs, Pagination, Accordion                                                         |
-| Оверлеи        | Modal, Drawer, Tooltip, Toast                                                       |
+| Оверлеи        | Modal, Drawer, Tooltip, Toast, Dropdown                                             |
 | Обратная связь | Alert, ProgressBar, Spinner, Skeleton                                               |
 | Отображение    | Avatar, Badge                                                                       |
 | Разметка       | Divider                                                                             |

@@ -1,0 +1,40 @@
+/* ============================================
+   ОБЩИЕ ШКАЛЫ
+   Не зависят от темы. Размеры конкретных компонентов здесь не хранятся -
+   они живут локальными переменными в CSS самого компонента.
+   ============================================ */
+
+:root {
+  /* --- Скругления --- */
+  --uikit-radius-sm: 4px;
+  --uikit-radius-md: 8px;
+  --uikit-radius-lg: 12px;
+
+  /* --- Шрифт --- */
+  --uikit-font-size-2xs: 11px;
+  --uikit-font-size-xs: 12px;
+  --uikit-font-size-sm: 14px;
+  --uikit-font-size-md: 16px;
+  --uikit-font-size-lg: 18px;
+  --uikit-font-size-xl: 20px;
+
+  --uikit-font-weight-regular: 400;
+  --uikit-font-weight-medium: 500;
+  --uikit-font-weight-semibold: 600;
+  --uikit-font-weight-bold: 700;
+
+  /* --- Высота контролов: поля, кнопки, пагинация - всё, что стоит в одной строке --- */
+  --uikit-control-height-sm: 32px;
+  --uikit-control-height-md: 40px;
+  --uikit-control-height-lg: 48px;
+
+  /* --- Тени (цвет берётся из темы) --- */
+  --uikit-shadow-sm: 0 1px 2px var(--uikit-color-shadow);
+  --uikit-shadow-md: 0 4px 12px var(--uikit-color-shadow);
+  --uikit-shadow-lg: 0 20px 50px var(--uikit-color-shadow);
+
+  /* --- Слои --- */
+  --uikit-z-index-dropdown: 900;
+  --uikit-z-index-toast: 1000;
+  --uikit-z-index-tooltip: 1100;
+}

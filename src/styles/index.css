@@ -1,0 +1,4 @@
+/* Все токены Iskra UI. Подключается один раз: в src/index.ts и в Ladle. */
+@import "./primitives.css";
+@import "./colors.css";
+@import "./foundation.css";

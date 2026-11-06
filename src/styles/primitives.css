@@ -1,0 +1,41 @@
+/* ============================================
+   ПАЛИТРА
+   Сырые цвета без смысла. Компоненты их напрямую не используют -
+   только через смысловые токены из colors.css.
+   ============================================ */
+
+:root {
+  --uikit-white: #ffffff;
+
+  --uikit-gray-100: #f3f4f6;
+  --uikit-gray-200: #e5e7eb;
+  --uikit-gray-300: #d1d5db;
+  --uikit-gray-400: #9ca3af;
+  --uikit-gray-500: #6b7280;
+  --uikit-gray-600: #4b5563;
+  --uikit-gray-700: #374151;
+  --uikit-gray-800: #1f2937;
+  --uikit-gray-900: #111827;
+
+  --uikit-blue-400: #60a5fa;
+  --uikit-blue-500: #3b82f6;
+  --uikit-blue-600: #2563eb;
+  --uikit-blue-700: #1d4ed8;
+  --uikit-blue-800: #1e40af;
+
+  --uikit-red-100: #f4c7c7;
+  --uikit-red-500: #ef4444;
+  --uikit-red-700: #b3261e;
+  --uikit-red-900: #5f2120;
+
+  --uikit-green-100: #cce8cd;
+  --uikit-green-500: #22c55e;
+  --uikit-green-700: #15803d;
+  --uikit-green-900: #1e4620;
+
+  --uikit-amber-100: #ffe2b7;
+  --uikit-amber-900: #663c00;
+
+  --uikit-sky-100: #b8e7fb;
+  --uikit-sky-900: #014361;
+}

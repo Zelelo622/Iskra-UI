@@ -1,17 +1,15 @@
-@import "../../styles/tokens.css";
-
 .sm {
-  --pagination-size: var(--uikit-input-height-sm);
+  --pagination-size: var(--uikit-control-height-sm);
   --pagination-font-size: var(--uikit-font-size-xs);
 }
 
 .md {
-  --pagination-size: var(--uikit-input-height-md);
+  --pagination-size: var(--uikit-control-height-md);
   --pagination-font-size: var(--uikit-font-size-sm);
 }
 
 .lg {
-  --pagination-size: var(--uikit-input-height-lg);
+  --pagination-size: var(--uikit-control-height-lg);
   --pagination-font-size: var(--uikit-font-size-md);
 }
 

@@ -1,5 +1,3 @@
-@import "../../styles/tokens.css";
-
 .divider {
   flex: none;
   background: var(--uikit-color-border);

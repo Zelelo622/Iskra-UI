@@ -1,12 +1,17 @@
-@import "../../styles/tokens.css";
-
 .avatar {
+  /* Цвета нужны только аватару, поэтому живут здесь, а не в общих токенах */
+  --avatar-bg: light-dark(var(--uikit-gray-200), var(--uikit-gray-700));
+  --avatar-text: light-dark(var(--uikit-gray-600), var(--uikit-gray-300));
+  --avatar-size: 40px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background-color: var(--uikit-color-avatar-bg);
-  color: var(--uikit-color-avatar-text);
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  background-color: var(--avatar-bg);
+  color: var(--avatar-text);
   font-weight: var(--uikit-font-weight-medium);
   overflow: hidden;
   vertical-align: middle;
@@ -22,20 +27,17 @@
 }
 
 .sm {
-  width: var(--uikit-avatar-size-sm);
-  height: var(--uikit-avatar-size-sm);
+  --avatar-size: 32px;
   font-size: var(--uikit-font-size-xs);
 }
 
 .md {
-  width: var(--uikit-avatar-size-md);
-  height: var(--uikit-avatar-size-md);
+  --avatar-size: 40px;
   font-size: var(--uikit-font-size-sm);
 }
 
 .lg {
-  width: var(--uikit-avatar-size-lg);
-  height: var(--uikit-avatar-size-lg);
+  --avatar-size: 48px;
   font-size: var(--uikit-font-size-md);
 }
 

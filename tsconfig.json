@@ -20,5 +20,5 @@
       "src/*": ["./src/*"]
     }
   },
-  "include": ["src", "vitest.setup.ts"]
+  "include": ["src", ".ladle/components.tsx", "vitest.setup.ts"]
 }

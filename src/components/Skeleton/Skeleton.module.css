@@ -1,6 +1,7 @@
-@import "../../styles/tokens.css";
-
 .skeleton {
+  /* Блик волны: на тёмном фоне яркий блик режет глаз, поэтому он почти прозрачный */
+  --skeleton-highlight: light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.08));
+
   position: relative;
   display: block;
   overflow: hidden;
@@ -42,12 +43,7 @@
   position: absolute;
   inset: 0;
   transform: translateX(-100%);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--uikit-color-skeleton-highlight),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--skeleton-highlight), transparent);
   animation: wave 1.6s linear infinite;
 }
 

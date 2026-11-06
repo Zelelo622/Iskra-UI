@@ -12,6 +12,8 @@ npm install @zelelo/iskra-ui
 
 Нужен React 18 или новее (`react` и `react-dom` - peer dependencies).
 
+Поддерживаемые браузеры: Chrome 123+, Edge 123+, Firefox 120+, Safari 17.5+ - стили используют CSS-функцию `light-dark()`.
+
 ## Использование
 
 Стили поставляются отдельным файлом - подключите его один раз в корне приложения:
@@ -51,31 +53,43 @@ import type { IButtonProps } from "@zelelo/iskra-ui";
 
 ## Тёмная тема
 
-Тёмная тема включается атрибутом `data-theme="dark"` на любом родительском элементе, обычно на `<html>`:
+Тема задаётся атрибутом `data-theme` на любом родительском элементе, обычно на `<html>`:
+
+| Значение     | Тема                                  |
+| :----------- | :------------------------------------ |
+| без атрибута | светлая                               |
+| `"light"`    | светлая                               |
+| `"dark"`     | тёмная                                |
+| `"auto"`     | как в настройках операционной системы |
 
 ```html
-<html data-theme="dark"></html>
+<html data-theme="auto"></html>
 ```
 
-Переключать тему - значит менять этот атрибут, например `document.documentElement.dataset.theme = "dark"`.
+Переключать тему - значит менять этот атрибут, например `document.documentElement.dataset.theme = "dark"`. Атрибут можно поставить и на часть страницы: всё внутри элемента возьмёт его тему.
+
+Вместе с темой меняется и `color-scheme`, поэтому скроллбары, автозаполнение и нативные элементы браузера тоже становятся тёмными.
 
 ## Настройка внешнего вида
 
-Цвета, радиусы, размеры шрифтов и другие значения заданы CSS-переменными с префиксом `--uikit-`. Чтобы изменить их, переопределите переменные в своём CSS, подключённом **после** `styles.css`:
+Цвета, радиусы, размеры шрифтов и другие значения заданы CSS-переменными с префиксом `--uikit-`. Чтобы изменить их, переопределите переменные в своём CSS, подключённом **после** `styles.css`.
+
+Цвет задавайте сразу для обеих тем через `light-dark(светлая, тёмная)` - так он будет правильным при любом значении `data-theme`, включая `"auto"`:
 
 ```css
 :root {
-  --uikit-color-accent: #7c3aed;
-  --uikit-color-accent-hover: #6d28d9;
+  --uikit-color-accent: light-dark(#7c3aed, #a78bfa);
+  --uikit-color-accent-hover: light-dark(#6d28d9, #c4b5fd);
   --uikit-radius-md: 4px;
-}
-
-[data-theme="dark"] {
-  --uikit-color-accent: #a78bfa;
 }
 ```
 
-Полный список переменных - в [tokens.css](https://github.com/Zelelo622/Iskra-UI/blob/main/src/styles/tokens.css).
+Кольцо фокуса считается из акцентного цвета само, его переопределять не нужно.
+
+Полный список переменных:
+
+- [colors.css](https://github.com/Zelelo622/Iskra-UI/blob/main/src/styles/colors.css) - цвета: фоны, текст, границы, акцент, статусы, тени;
+- [foundation.css](https://github.com/Zelelo622/Iskra-UI/blob/main/src/styles/foundation.css) - скругления, шрифты, высота полей и кнопок, тени, слои.
 
 ## Участие в разработке
 

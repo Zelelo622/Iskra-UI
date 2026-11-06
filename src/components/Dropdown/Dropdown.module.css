@@ -1,0 +1,103 @@
+@import "../../styles/tokens.css";
+
+.dropdown {
+  z-index: var(--uikit-z-index-dropdown);
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  max-width: 320px;
+  padding: 4px;
+  font-size: var(--uikit-font-size-sm);
+  color: var(--uikit-color-text);
+  background-color: var(--uikit-color-surface);
+  border: 1px solid var(--uikit-color-border);
+  border-radius: var(--uikit-radius-md);
+  box-shadow: var(--uikit-shadow-md);
+  outline: none;
+}
+
+.dropdown[data-pending] {
+  opacity: 0;
+}
+
+.dropdown:not([data-pending]) {
+  animation: dropdown-fade-in 0.12s ease-out;
+}
+
+.dropdown[data-placement^="bottom"] {
+  --dropdown-shift: -4px;
+}
+
+.dropdown[data-placement^="top"] {
+  --dropdown-shift: 4px;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px 8px;
+  font: inherit;
+  color: inherit;
+  text-align: start;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: var(--uikit-radius-sm);
+  outline: none;
+}
+
+.item[data-active] {
+  background-color: var(--uikit-color-surface-hover);
+}
+
+.item:focus-visible {
+  outline: 2px solid var(--uikit-color-accent);
+  outline-offset: -2px;
+}
+
+.danger {
+  color: var(--uikit-color-danger);
+}
+
+.item:disabled,
+.item[aria-disabled="true"] {
+  color: var(--uikit-color-text-subtle);
+  cursor: not-allowed;
+  background: none;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.divider {
+  margin: 4px -4px;
+  width: auto;
+}
+
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--dropdown-shift, 0));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

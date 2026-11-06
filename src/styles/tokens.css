@@ -108,6 +108,7 @@
   --uikit-font-weight-bold: 700;
 
   /* --- Z-index --- */
+  --uikit-z-index-dropdown: 900;
   --uikit-z-index-toast: 1000;
   --uikit-z-index-tooltip: 1100;
 

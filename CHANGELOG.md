@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.5.0...v0.6.0) (2026-11-06)
+
+
+### Новые возможности
+
+* **dropdown:** добавлен компонент Dropdown ([#27](https://github.com/Zelelo622/Iskra-UI/issues/27)) ([dabe066](https://github.com/Zelelo622/Iskra-UI/commit/dabe0663955827ef6685aa61a92f66a531690fc8))
+
 ## [0.5.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.4.0...v0.5.0) (2026-11-05)
 
 

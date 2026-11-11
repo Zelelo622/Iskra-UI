@@ -51,7 +51,7 @@ export const Radio = forwardRef<HTMLInputElement, IRadioProps>(
         className={cx(
           styles.root,
           styles[size],
-          disabled && styles.disabled,
+          isDisabled && styles.disabled,
           hasError && styles.hasError,
           className,
         )}

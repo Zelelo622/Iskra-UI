@@ -17,17 +17,30 @@ export const Modal = ({
   children,
 }: IModalProps): ReactNode => {
   const ref = useRef<HTMLDialogElement>(null);
+  const suppressedCloseEventsRef = useRef(0);
   const titleId = useId();
 
   useEffect(() => {
-    if (open) {
-      ref.current?.showModal();
-    } else {
-      ref.current?.close();
+    const dialog = ref.current;
+    if (!dialog) {
+      return;
+    }
+
+    if (open && !dialog.open) {
+      dialog.showModal();
+    } else if (!open && dialog.open) {
+      suppressedCloseEventsRef.current += 1;
+      dialog.close();
     }
   }, [open]);
 
-  const close = () => ref.current?.close();
+  const handleClose = () => {
+    if (suppressedCloseEventsRef.current > 0) {
+      suppressedCloseEventsRef.current -= 1;
+      return;
+    }
+    onClose();
+  };
 
   return (
     // Escape у <dialog> уже закрывает модалку с клавиатуры
@@ -37,8 +50,8 @@ export const Modal = ({
       className={cx(styles.modal, styles[size])}
       style={{ maxWidth: toCss(width) }}
       aria-labelledby={title ? titleId : undefined}
-      onClose={onClose}
-      onClick={(e) => e.target === e.currentTarget && close()}
+      onClose={handleClose}
+      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className={styles.content}>
         {title && (
@@ -46,7 +59,7 @@ export const Modal = ({
             <h2 id={titleId} className={styles.title}>
               {title}
             </h2>
-            <button type="button" className={styles.close} aria-label="Закрыть" onClick={close}>
+            <button type="button" className={styles.close} aria-label="Закрыть" onClick={onClose}>
               ×
             </button>
           </header>

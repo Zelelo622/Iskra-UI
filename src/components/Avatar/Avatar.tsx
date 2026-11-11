@@ -15,9 +15,9 @@ export const Avatar = ({
   className,
   children,
 }: IAvatarProps): ReactNode => {
-  const [hasError, setHasError] = useState(false);
+  const [failedSrc, setFailedSrc] = useState<string>();
 
-  const showImage = src && !hasError;
+  const showImage = src && failedSrc !== src;
 
   return (
     <span
@@ -26,7 +26,7 @@ export const Avatar = ({
       aria-label={alt}
     >
       {showImage ? (
-        <img src={src} alt={alt} className={styles.image} onError={() => setHasError(true)} />
+        <img src={src} alt={alt} className={styles.image} onError={() => setFailedSrc(src)} />
       ) : (
         <span className={styles.fallback}>{fallback || alt?.charAt(0) || children}</span>
       )}

@@ -7,6 +7,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   external: ["react", "react-dom"],
+  banner: { js: '"use client";' },
   injectStyle: false,
   // tsup routes every .css file through its own postcss plugin, which only reads
   // loader[".css"] and ignores ".module.css". All CSS is loaded as CSS Modules here,

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useCallback, type ReactNode } from "react";
 
 import { cx } from "src/utils/utils";
 
@@ -14,14 +14,30 @@ export const AccordionContent = ({
   ...props
 }: IAccordionContentProps): ReactNode => {
   const { isOpen, baseId } = useAccordionItem();
+  const contentRef = useCallback(
+    (element: HTMLDivElement | null) => {
+      if (!element) {
+        return;
+      }
+
+      if (isOpen) {
+        element.removeAttribute("inert");
+      } else {
+        element.setAttribute("inert", "");
+      }
+    },
+    [isOpen],
+  );
 
   return (
     <div
+      ref={contentRef}
       id={`content-${baseId}`}
       role="region"
       aria-labelledby={`trigger-${baseId}`}
       className={cx(styles.contentWrapper, isOpen && styles.contentWrapperOpen, className)}
       {...props}
+      aria-hidden={!isOpen}
     >
       <div className={styles.contentInner}>{children}</div>
     </div>

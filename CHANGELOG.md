@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/Zelelo622/Iskra-UI/compare/v0.7.0...v0.7.1) (2026-11-11)
+
+
+### Исправления
+
+* **accordion:** скрывает закрытое содержимое от навигации ([#31](https://github.com/Zelelo622/Iskra-UI/issues/31)) ([f8249ad](https://github.com/Zelelo622/Iskra-UI/commit/f8249adc15cbedcecdbd2f02a78249800fd47ded))
+
 ## [0.7.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.6.0...v0.7.0) (2026-11-06)
 
 

@@ -9,6 +9,7 @@ interface ICheckboxGroupProviderProps {
   onChange?: (value: string[]) => void;
   disabled?: boolean;
   invalid?: boolean;
+  required?: boolean;
   children: ReactNode;
 }
 
@@ -19,6 +20,7 @@ export const CheckboxGroupProvider = ({
   onChange,
   disabled,
   invalid,
+  required,
   children,
 }: ICheckboxGroupProviderProps): ReactElement => {
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
@@ -38,7 +40,9 @@ export const CheckboxGroupProvider = ({
   };
 
   return (
-    <CheckboxGroupContext.Provider value={{ name, value: currentValue, toggle, disabled, invalid }}>
+    <CheckboxGroupContext.Provider
+      value={{ name, value: currentValue, toggle, disabled, invalid, required }}
+    >
       {children}
     </CheckboxGroupContext.Provider>
   );

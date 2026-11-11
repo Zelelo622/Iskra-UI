@@ -1,5 +1,13 @@
 import type { ChangeEvent, ReactElement } from "react";
-import { forwardRef, useContext, useEffect, useId, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useId,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
 import { cx } from "src/utils/utils";
 
@@ -30,7 +38,7 @@ export const Checkbox = forwardRef<HTMLInputElement, ICheckboxProps>(
     ref,
   ): ReactElement => {
     const group = useContext(CheckboxGroupContext);
-    const innerRef = useRef<HTMLInputElement>(null);
+    const innerRef = useRef<HTMLInputElement | null>(null);
     const autoId = useId();
     const checkboxId = id ?? autoId;
 
@@ -42,6 +50,15 @@ export const Checkbox = forwardRef<HTMLInputElement, ICheckboxProps>(
     const isChecked = group ? group.value.includes(String(value)) : checked;
     const isDisabled = group?.disabled || disabled;
     const isInvalid = hasError || group?.invalid;
+    const groupRequired = Boolean(group?.required && !isDisabled && group.value.length === 0);
+
+    const setInputRefAndValidity = useCallback(
+      (element: HTMLInputElement | null) => {
+        innerRef.current = element;
+        element?.setCustomValidity(groupRequired ? "Выберите хотя бы один вариант." : "");
+      },
+      [groupRequired],
+    );
 
     useImperativeHandle(ref, () => innerRef.current as HTMLInputElement, []);
 
@@ -61,7 +78,7 @@ export const Checkbox = forwardRef<HTMLInputElement, ICheckboxProps>(
         <label className={styles.label}>
           <input
             id={checkboxId}
-            ref={innerRef}
+            ref={setInputRefAndValidity}
             type="checkbox"
             name={inputName}
             value={value}

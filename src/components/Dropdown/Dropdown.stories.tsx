@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 import { Button } from "../Button/Button";
+import { Drawer } from "../Drawer";
+import { Modal } from "../Modal";
 
 import { Dropdown } from "./Dropdown";
 
@@ -100,3 +104,31 @@ export const ControlledAlwaysOpen: Story<IDropdownProps> = (props) => (
   </div>
 );
 ControlledAlwaysOpen.args = {};
+
+export const InsideModal: Story<IDropdownProps> = (props) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ padding: "4rem" }}>
+      <Button onClick={() => setOpen(true)}>Открыть модалку</Button>
+      <Modal open={open} onClose={() => setOpen(false)} title="Модалка">
+        <Dropdown {...props} trigger={<Button>Действия</Button>} items={BASIC_ITEMS} />
+      </Modal>
+    </div>
+  );
+};
+InsideModal.args = {};
+
+export const InsideDrawer: Story<IDropdownProps> = (props) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ padding: "4rem" }}>
+      <Button onClick={() => setOpen(true)}>Открыть панель</Button>
+      <Drawer open={open} onClose={() => setOpen(false)} title="Панель">
+        <Dropdown {...props} trigger={<Button>Действия</Button>} items={BASIC_ITEMS} />
+      </Drawer>
+    </div>
+  );
+};
+InsideDrawer.args = {};

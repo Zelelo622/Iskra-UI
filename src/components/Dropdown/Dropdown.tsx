@@ -1,4 +1,4 @@
-import { cloneElement, useRef, useState, type ReactNode } from "react";
+import { cloneElement, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 
 import {
   autoUpdate,
@@ -56,14 +56,18 @@ export const Dropdown = ({
     context,
     placement: finalPlacement,
     isPositioned,
+    elements,
   } = useFloating({
     open: isOpen,
     onOpenChange: handleOpenChange,
     placement,
     whileElementsMounted: autoUpdate,
     transform: false,
+    strategy: "fixed",
     middleware: [offset(4), flip(), shift({ padding: 8 })],
   });
+
+  const portalRoot = elements.domReference?.closest("dialog") ?? undefined;
 
   const click = useClick(context);
   const dismiss = useDismiss(context);
@@ -105,7 +109,7 @@ export const Dropdown = ({
     <>
       {triggerElement}
       {isOpen && (
-        <FloatingPortal>
+        <FloatingPortal root={portalRoot}>
           <FloatingFocusManager context={context} modal={false}>
             <div
               // oxlint-disable-next-line react/refs
@@ -114,7 +118,15 @@ export const Dropdown = ({
               data-placement={finalPlacement}
               data-pending={isPositioned ? undefined : ""}
               className={cx(styles.dropdown, className)}
-              {...getFloatingProps(props)}
+              {...getFloatingProps({
+                ...props,
+                onKeyDown(event) {
+                  props.onKeyDown?.(event as KeyboardEvent<HTMLDivElement>);
+                  if (event.key === "Escape") {
+                    event.preventDefault();
+                  }
+                },
+              })}
             >
               {items.map((item, index) => {
                 if (item.type === "divider") {

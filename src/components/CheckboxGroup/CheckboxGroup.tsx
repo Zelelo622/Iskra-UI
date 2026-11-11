@@ -39,12 +39,14 @@ export const CheckboxGroup = ({
       onChange={onChange}
       disabled={disabled}
       invalid={hasError}
+      required={required}
     >
       <fieldset
         className={cx(styles.root, className)}
         disabled={disabled}
         aria-describedby={describedBy}
         {...props}
+        aria-required={required || undefined}
       >
         {label && (
           <legend className={styles.legend}>

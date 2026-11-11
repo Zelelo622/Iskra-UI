@@ -6,6 +6,7 @@ export interface ICheckboxGroupContext {
   toggle: (value: string, checked: boolean) => void;
   disabled?: boolean;
   invalid?: boolean;
+  required?: boolean;
 }
 
 export const CheckboxGroupContext = createContext<ICheckboxGroupContext | null>(null);

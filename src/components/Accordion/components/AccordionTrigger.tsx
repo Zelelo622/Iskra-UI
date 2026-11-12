@@ -13,6 +13,7 @@ export const AccordionTrigger = ({
   className,
   children,
   disabled: triggerDisabled,
+  onClick,
   ...props
 }: IAccordionTriggerProps): ReactNode => {
   const { toggleItem } = useAccordion();
@@ -29,8 +30,13 @@ export const AccordionTrigger = ({
         aria-controls={`content-${baseId}`}
         disabled={isDisabled}
         className={cx(styles.trigger, className)}
-        onClick={() => toggleItem(value)}
         {...props}
+        onClick={(event) => {
+          onClick?.(event);
+          if (!event.defaultPrevented) {
+            toggleItem(value);
+          }
+        }}
       >
         {children}
         <svg

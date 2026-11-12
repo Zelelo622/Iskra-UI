@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type MouseEvent, type ReactNode } from "react";
 
 import { cx } from "src/utils/utils";
 
@@ -12,6 +12,7 @@ export const Toast = ({
   closable = true,
   duration = 5000,
   onClose,
+  closeLabel = "Закрыть",
   children,
   className,
   onMouseEnter,
@@ -54,13 +55,13 @@ export const Toast = ({
     return clearTimer;
   }, [startTimer, clearTimer]);
 
-  const handleMouseEnter: React.MouseEventHandler<HTMLDivElement> = (e) => {
+  const handleMouseEnter = (e: MouseEvent<HTMLDivElement>) => {
     clearTimer();
     remainingRef.current -= Date.now() - startedAtRef.current;
     onMouseEnter?.(e);
   };
 
-  const handleMouseLeave: React.MouseEventHandler<HTMLDivElement> = (e) => {
+  const handleMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
     startTimer(remainingRef.current);
     onMouseLeave?.(e);
   };
@@ -88,7 +89,7 @@ export const Toast = ({
           type="button"
           className={styles.closeButton}
           onClick={handleClose}
-          aria-label="Close toast"
+          aria-label={closeLabel}
         >
           ×
         </button>

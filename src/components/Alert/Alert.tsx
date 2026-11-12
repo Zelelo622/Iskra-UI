@@ -12,6 +12,7 @@ export const Alert = ({
   title,
   closable = false,
   onClose,
+  closeLabel = "Закрыть",
   children,
   className,
   ...props
@@ -41,7 +42,7 @@ export const Alert = ({
           type="button"
           className={styles.closeButton}
           onClick={handleClose}
-          aria-label="Close alert"
+          aria-label={closeLabel}
         >
           ×
         </button>

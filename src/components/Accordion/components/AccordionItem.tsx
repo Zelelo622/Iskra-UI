@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { cx } from "src/utils/utils";
 
 import { AccordionItemProvider } from "../AccordionProvider/AccordionItemProvider";
+import { useAccordion } from "../hooks/useAccordion";
 
 import type { IAccordionItemProps } from "../types";
 
@@ -14,10 +15,17 @@ export const AccordionItem = ({
   className,
   children,
   ...props
-}: IAccordionItemProps): ReactNode => (
-  <AccordionItemProvider value={value} disabled={disabled}>
-    <div className={cx(styles.item, disabled && styles.disabled, className)} {...props}>
-      {children}
-    </div>
-  </AccordionItemProvider>
-);
+}: IAccordionItemProps): ReactNode => {
+  const { disabled: rootDisabled } = useAccordion();
+  const isDisabled = rootDisabled || disabled;
+
+  return (
+    <AccordionItemProvider value={value} disabled={disabled}>
+      <div className={cx(styles.item, isDisabled && styles.disabled, className)} {...props}>
+        {children}
+      </div>
+    </AccordionItemProvider>
+  );
+};
+
+AccordionItem.displayName = "AccordionItem";

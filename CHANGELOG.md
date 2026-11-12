@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/Zelelo622/Iskra-UI/compare/v0.7.2...v0.8.0) (2026-11-12)
+
+
+### Новые возможности
+
+* **tag:** добавлен компонент Tag ([#35](https://github.com/Zelelo622/Iskra-UI/issues/35)) ([8244c44](https://github.com/Zelelo622/Iskra-UI/commit/8244c443f0d700a90a3c58223310c3f4b4ec0a25))
+
 ## [0.7.2](https://github.com/Zelelo622/Iskra-UI/compare/v0.7.1...v0.7.2) (2026-11-12)
 
 

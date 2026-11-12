@@ -15,10 +15,12 @@ export const Tabs = ({ items, defaultValue, onChange, className }: ITabsProps): 
   const id = useId();
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
-  const activeIndex = items.findIndex((item) => item.value === active);
+  const firstEnabledIndex = items.findIndex((item) => !item.disabled);
+  const foundIndex = items.findIndex((item) => item.value === active && !item.disabled);
+  const activeIndex = foundIndex >= 0 ? foundIndex : firstEnabledIndex;
 
   const select = (value: string) => {
-    if (value === active) return;
+    if (value === items[activeIndex]?.value) return;
     setActive(value);
     onChange?.(value);
   };
@@ -26,6 +28,7 @@ export const Tabs = ({ items, defaultValue, onChange, className }: ITabsProps): 
   const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
     const enabled = items.flatMap((item, i) => (item.disabled ? [] : [i]));
     const position = enabled.indexOf(index);
+    if (position < 0) return;
 
     let next: number;
     switch (event.key) {

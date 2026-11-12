@@ -79,3 +79,5 @@ export const ToastProvider = ({
     </ToastContext.Provider>
   );
 };
+
+ToastProvider.displayName = "ToastProvider";

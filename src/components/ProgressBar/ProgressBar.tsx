@@ -15,16 +15,16 @@ export const ProgressBar = ({
   style,
   ...props
 }: IProgressBarProps): ReactNode => {
-  const isIndenterminate = value === undefined;
+  const isIndeterminate = value === undefined;
   const safeMax = max > 0 ? max : 100;
-  const clamped = isIndenterminate ? 0 : Math.min(Math.max(value, 0), safeMax);
+  const clamped = isIndeterminate ? 0 : Math.min(Math.max(value, 0), safeMax);
   const percent = (clamped / safeMax) * 100;
 
   const classes = cx(
     styles.progress,
     styles[size],
     styles[variant],
-    isIndenterminate && styles.indeterminate,
+    isIndeterminate && styles.indeterminate,
     className,
   );
 
@@ -35,7 +35,7 @@ export const ProgressBar = ({
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={safeMax}
-      aria-valuenow={isIndenterminate ? undefined : clamped}
+      aria-valuenow={isIndeterminate ? undefined : clamped}
       {...props}
     >
       <div className={styles.fill} />

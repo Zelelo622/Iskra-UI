@@ -19,11 +19,14 @@ export const RadioGroup = ({
   disabled,
   className,
   children,
+  "aria-describedby": ariaDescribedBy,
   ...props
 }: IRadioGroupProps): ReactElement => {
   const labelId = useId();
   const messageId = useId();
   const hasError = Boolean(error);
+  const describedBy =
+    [ariaDescribedBy, hasError ? messageId : undefined].filter(Boolean).join(" ") || undefined;
 
   return (
     <RadioGroupProvider
@@ -39,7 +42,7 @@ export const RadioGroup = ({
         role="radiogroup"
         aria-labelledby={label ? labelId : undefined}
         aria-invalid={hasError || undefined}
-        aria-describedby={hasError ? messageId : undefined}
+        aria-describedby={describedBy}
         aria-required={required || undefined}
         {...props}
       >

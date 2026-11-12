@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from "react";
+import type { KeyboardEvent, ReactElement, ReactNode } from "react";
 import { cloneElement, isValidElement, useState } from "react";
 
 import {
@@ -6,6 +6,7 @@ import {
   flip,
   offset,
   shift,
+  useDismiss,
   useFloating,
   useFocus,
   useHover,
@@ -45,25 +46,33 @@ export const Tooltip = ({
 
   const hover = useHover(context, { delay: { open: delay, close: 0 } });
   const focus = useFocus(context);
+  // Escape закрывает подсказку, не убирая курсор и фокус (WCAG 1.4.13)
+  const dismiss = useDismiss(context);
   const role = useRole(context, { role: "tooltip" });
 
-  const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, role]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, dismiss, role]);
 
   const childRef = isValidElement(children)
     ? ((children as any).props?.ref ?? (children as any).ref)
     : null;
   const mergedRef = useMergeRefs([refs.setReference, childRef]);
 
+  const childProps = isValidElement(children) ? (children as ReactElement<any>).props : {};
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    childProps.onKeyDown?.(event);
+    if (open && event.key === "Escape") {
+      event.preventDefault();
+    }
+  };
+
   const child = isValidElement(children) ? (
     cloneElement(
       children as ReactElement<any>,
-      getReferenceProps({
-        ...(children as ReactElement<any>).props,
-        ref: mergedRef,
-      }),
+      getReferenceProps({ ...childProps, ref: mergedRef, onKeyDown: handleKeyDown }),
     )
   ) : (
-    <span ref={refs.setReference} {...getReferenceProps()}>
+    <span ref={refs.setReference} {...getReferenceProps({ onKeyDown: handleKeyDown })}>
       {children}
     </span>
   );
@@ -87,3 +96,5 @@ export const Tooltip = ({
     </>
   );
 };
+
+Tooltip.displayName = "Tooltip";

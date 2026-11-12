@@ -9,9 +9,9 @@ import type { IPaginationProps } from "./types";
 import styles from "./Pagination.module.css";
 
 const DEFAULT_LABELS = {
-  previous: "Previous page",
-  next: "Next page",
-  page: (page: number) => `Page ${page}`,
+  previous: "Предыдущая страница",
+  next: "Следующая страница",
+  page: (page: number) => `Страница ${page}`,
 };
 
 const Chevron = ({ direction }: { direction: "left" | "right" }): ReactNode => (
@@ -40,7 +40,7 @@ export const Pagination = ({
   disabled,
   labels,
   className,
-  "aria-label": ariaLabel = "Pagination",
+  "aria-label": ariaLabel = "Навигация по страницам",
   ...props
 }: IPaginationProps): ReactNode => {
   const [uncontrolledPage, setUncontrolledPage] = useState(defaultPage);

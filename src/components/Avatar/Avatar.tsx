@@ -6,6 +6,8 @@ import type { IAvatarProps } from "./types";
 
 import styles from "./Avatar.module.css";
 
+const firstChar = (text?: string): string | undefined => Array.from(text?.trim() ?? "")[0];
+
 export const Avatar = ({
   src,
   alt,
@@ -14,6 +16,7 @@ export const Avatar = ({
   shape = "circle",
   className,
   children,
+  ...props
 }: IAvatarProps): ReactNode => {
   const [failedSrc, setFailedSrc] = useState<string>();
 
@@ -21,14 +24,17 @@ export const Avatar = ({
 
   return (
     <span
+      {...props}
       className={cx(styles.avatar, styles[size], styles[shape], className)}
-      role="img"
+      role={alt ? "img" : undefined}
       aria-label={alt}
     >
       {showImage ? (
-        <img src={src} alt={alt} className={styles.image} onError={() => setFailedSrc(src)} />
+        <img src={src} alt={alt ?? ""} className={styles.image} onError={() => setFailedSrc(src)} />
       ) : (
-        <span className={styles.fallback}>{fallback || alt?.charAt(0) || children}</span>
+        <span className={styles.fallback} aria-hidden={alt ? true : undefined}>
+          {fallback || firstChar(alt) || children}
+        </span>
       )}
     </span>
   );

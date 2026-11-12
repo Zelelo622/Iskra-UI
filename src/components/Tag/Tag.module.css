@@ -1,0 +1,75 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  border-radius: var(--uikit-radius-sm);
+  font-weight: var(--uikit-font-weight-medium);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sm {
+  padding: 0 6px;
+  font-size: var(--uikit-font-size-2xs);
+}
+
+.md {
+  padding: 2px 8px;
+  font-size: var(--uikit-font-size-xs);
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gray {
+  background: var(--uikit-color-surface-active);
+  color: var(--uikit-color-text);
+}
+
+.blue {
+  background: var(--uikit-color-info-bg);
+  color: var(--uikit-color-info-text);
+}
+
+.green {
+  background: var(--uikit-color-success-bg);
+  color: var(--uikit-color-success-text);
+}
+
+.red {
+  background: var(--uikit-color-error-bg);
+  color: var(--uikit-color-error-text);
+}
+
+.remove {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: -4px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.remove:hover {
+  opacity: 1;
+  background: color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.remove:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--uikit-color-accent-focus);
+  outline-offset: 1px;
+}

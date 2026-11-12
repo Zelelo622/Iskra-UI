@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.2](https://github.com/Zelelo622/Iskra-UI/compare/v0.7.1...v0.7.2) (2026-11-12)
+
+
+### Исправления
+
+* исправлены ошибки доступности и поведения компонентов ([#33](https://github.com/Zelelo622/Iskra-UI/issues/33)) ([addc704](https://github.com/Zelelo622/Iskra-UI/commit/addc7043e0a4190f11d19a8f9498b66335fab4af))
+
 ## [0.7.1](https://github.com/Zelelo622/Iskra-UI/compare/v0.7.0...v0.7.1) (2026-11-11)
 
 

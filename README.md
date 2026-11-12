@@ -48,7 +48,7 @@ import type { IButtonProps } from "@zelelo/iskra-ui";
 | Навигация      | Tabs, Pagination, Accordion                                                         |
 | Оверлеи        | Modal, Drawer, Tooltip, Toast, Dropdown                                             |
 | Обратная связь | Alert, ProgressBar, Spinner, Skeleton                                               |
-| Отображение    | Avatar, Badge                                                                       |
+| Отображение    | Avatar, Badge, Tag                                                                       |
 | Разметка       | Divider                                                                             |
 
 ## Тёмная тема
